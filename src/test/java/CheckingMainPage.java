@@ -17,7 +17,7 @@ public class CheckingMainPage {
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://psycholog-vam.ru");
         driver.manage().window().maximize();
