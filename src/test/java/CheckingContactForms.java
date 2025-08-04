@@ -1,0 +1,43 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
+
+public class CheckingContactForms {
+    private WebDriver driver;
+
+    @BeforeMethod
+    public void SetUp() {
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.get("https://www.psycholog-vam.ru/");
+        driver.manage().window().maximize();
+
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
+    }
+
+    @Test
+    public void checkingContactForms () throws InterruptedException {
+        WebElement wb_Text8 = driver.findElement(By.cssSelector("#wb_Text8"));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", wb_Text8);
+        WebElement mailelement =  driver.findElement(By.cssSelector("#formListView li:first-child p"));
+        WebElement callMe = driver.findElement(By.cssSelector("#formListView li:nth-child(2) p"));
+        WebElement location = driver.findElement(By.cssSelector("#formListView li:nth-child(3) p"));
+        assertEquals("vlada.magnich@yandex.ru", mailelement.getText(),
+                    "Значение в поле Mail не соответствует ожиданию!");
+        assertEquals("+79274660406", callMe.getText(),
+                "Значение в поле 'Позвони мне' не соответствует ожиданию!");
+        assertEquals("Город Казань", location.getText(),
+                "Значение в поле 'Расположение' не соответствует ожиданию!");
+    }
+}
