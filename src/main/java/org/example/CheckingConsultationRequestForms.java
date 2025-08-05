@@ -1,3 +1,5 @@
+package org.example;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +16,8 @@ public class CheckingConsultationRequestForms {
 
     @BeforeMethod
     public void SeTup(){
-        System.setProperty("webdriver.chrome.driver",  "drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",  "C:\\Users\\User\\distr\\psychologVaM\\" +
+                "TestingPsychologVaM_2\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://psycholog-vam.ru/");
         driver.manage().window().maximize();
@@ -51,6 +54,7 @@ public class CheckingConsultationRequestForms {
         String forMessageValue = formMessageElement.getAttribute("placeholder");
         assertEquals("Значение поля 'placeholder' для поля ввода 'Сообщение' не соответствует ожиданию!",
                 forMessageValue, "Введите сообщение - не более 255 символов");
+        System.out.println("Tests for CheckingConsultationRequestForms(): completed successfully!");
     }
 
 }

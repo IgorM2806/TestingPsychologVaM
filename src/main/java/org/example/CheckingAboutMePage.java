@@ -1,4 +1,5 @@
-import com.beust.ah.A;
+package org.example;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +17,8 @@ public class CheckingAboutMePage {
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver",  "drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",  "C:\\Users\\User\\distr\\psychologVaM\\" +
+                "TestingPsychologVaM_2\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://psycholog-vam.ru/SpecialistProfile.html");
         driver.manage().window().maximize();
@@ -28,14 +30,24 @@ public class CheckingAboutMePage {
     }
 
     @Test
-    public void checkTitleMePage() {
+    public void CheckTitleMePage() {
         String title = driver.getTitle();
+        boolean isPassed = title.equals("About me");
+        if (!isPassed) {
+            System.err.println("Error occurred during CheckTitleMePage()");
+        }
+        System.out.println("Test result for checkTitleMePage(): " + (isPassed ? "PASSED" : "FAILED"));
         Assert.assertEquals(title, "About me");
     }
 
     @Test
     public void CheckingHeader() {
         String header = driver.findElement(By.id("Heading1")).getText();
+        boolean isPassed = header.equals("Влада Магнич – психолог, коуч, карьерный консультант и профориентолог");
+        if (!isPassed) {
+            System.err.println("Error occurred during CheckingHeader()");
+        }
+        System.out.println("Test result for CheckingHeader(): " + (isPassed ? "PASSED" : "FAILED"));
         assertEquals("Влада Магнич – психолог, коуч, карьерный консультант и профориентолог", header);
     }
     @Test
@@ -43,6 +55,11 @@ public class CheckingAboutMePage {
         WebElement mainPoint = driver.findElement(By.cssSelector("#menu-list li:first-child a"));
         mainPoint.click();
         String title = driver.getTitle();
+        boolean isPassed = title.equals("psycholog-vam");
+        if (!isPassed) {
+            System.err.println("Error occurred during CheckingMainPoint()");
+        }
+        System.out.println("Test result for CheckingMainPoint(): " + (isPassed ? "PASSED" : "FAILED"));
         assertEquals(title, "psycholog-vam");
     }
     @Test
@@ -50,6 +67,11 @@ public class CheckingAboutMePage {
         WebElement aboutMe = driver.findElement(By.cssSelector("#menu-list li:nth-child(2) a"));
         aboutMe.click();
         String title = driver.getTitle();
+        boolean isPassed = title.equals("About me");
+        if (!isPassed) {
+            System.err.println("Error occurred during CheckingAboutMePoint()");
+        }
+        System.out.println("Test result for CheckingAboutMePoint(): " + (isPassed ? "PASSED" : "FAILED"));
         assertEquals(title, "About me");
     }
     @Test
@@ -57,14 +79,24 @@ public class CheckingAboutMePage {
         WebElement education = driver.findElement(By.cssSelector("#menu-list li:nth-child(3) a"));
         education.click();
         String title = driver.getTitle();
+        boolean isPassed = title.equals("Education");
+        if (!isPassed) {
+            System.err.println("Error occurred during CheckingEducationPoint()");
+        }
+        System.out.println("Test result for CheckingEducationPoint(): " + (isPassed ? "PASSED" : "FAILED"));
         assertEquals(title, "Education");
     }
 
     @Test
-    public void CheckingAllPublicationspoint() {
+    public void CheckingAllPublicationsPoint() {
         WebElement allPublications =  driver.findElement(By.cssSelector("#menu-list li:nth-child(4) a"));
         allPublications.click();
         String title = driver.getTitle();
+        boolean isPassed = title.equals("Все публикации");
+        if (!isPassed) {
+            System.err.println("Error occurred during CheckingAllPublicationsPoint()");
+        }
+        System.out.println("Test result for CheckingAllPublicationsPoint(): " + (isPassed ? "PASSED" : "FAILED"));
         assertEquals(title, "Все публикации");
     }
     @Test
@@ -72,9 +104,18 @@ public class CheckingAboutMePage {
         WebElement contacts =  driver.findElement(By.cssSelector("#menu-list li:nth-child(5) a"));
         contacts.click();
         String title = driver.getTitle();
+        boolean isPassed = title.equals("psycholog-vam");
+        if (!isPassed) {
+            System.err.println("Error occurred during title");
+        }
+        System.out.println("Test result for title: " + (isPassed ? "PASSED" : "FAILED"));
         assertEquals("Значение title не соответсвует ожиданию!", title, "psycholog-vam");
         WebElement wb_Text8 =  driver.findElement(By.cssSelector("#wb_Text8 span"));
         boolean isVisible = wb_Text8.isDisplayed();
+        if (!isVisible) {
+            System.err.println("Error occurred during wb_Text8 - Is NOT visible");
+        }
+        System.out.println("Видимость элемента (#wb_Text8 span): " + isVisible);
         assertTrue(isVisible);
     }
 

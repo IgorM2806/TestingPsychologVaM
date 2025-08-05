@@ -1,3 +1,5 @@
+package org.example;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +16,8 @@ public class CheckingContactForms {
 
     @BeforeMethod
     public void SetUp() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\distr\\psychologVaM\\" +
+                "TestingPsychologVaM_2\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://www.psycholog-vam.ru/");
         driver.manage().window().maximize();
@@ -35,9 +38,12 @@ public class CheckingContactForms {
         WebElement location = driver.findElement(By.cssSelector("#formListView li:nth-child(3) p"));
         assertEquals("vlada.magnich@yandex.ru", mailelement.getText(),
                     "Значение в поле Mail не соответствует ожиданию!");
+        System.out.println("Tests for Mail : completed successfully");
         assertEquals("+79274660406", callMe.getText(),
                 "Значение в поле 'Позвони мне' не соответствует ожиданию!");
+        System.out.println("Tests for Позвони мне: completed successfully");
         assertEquals("Город Казань", location.getText(),
                 "Значение в поле 'Расположение' не соответствует ожиданию!");
+        System.out.println("Tests for location: completed successfully");
     }
 }

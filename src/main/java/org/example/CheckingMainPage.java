@@ -1,5 +1,8 @@
+package org.example;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -17,7 +20,8 @@ public class CheckingMainPage {
 
     @BeforeMethod
     public void setUp() {
-            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\distr\\psychologVaM\\" +
+                    "TestingPsychologVaM_2\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://psycholog-vam.ru");
         driver.manage().window().maximize();
@@ -31,31 +35,30 @@ public class CheckingMainPage {
     public void checkTitle() throws InterruptedException {
         String title = driver.getTitle();
         assert title.contains("psycholog-vam");
+        System.out.println("Tests for logoSearch(): completed successfully!");
         //Thread.sleep(500);
     }
 
     @Test
     public void logoSearch() throws InterruptedException {
-        WebElement logo = driver.findElement(By.id("Picture1"));
+        WebElement logo = driver.findElement(By.id("Picture2"));
         String actualSrcValue = logo.getAttribute("src");
-        //System.out.println("ActualSrcValue: " + actualSrcValue);
         assertEquals("Атрибут src не соответсвует ожидаемому значению!", actualSrcValue,
-                "https://psycholog-vam.ru/images/80204593-3_smoll.png");
+                "https://psycholog-vam.ru/images/DSC_6602_smol.JPG");
+        System.out.println("Tests for logoSearch(): completed successfully!");
     }
     @Test
     public void checkingMenuMainPage()  throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         WebElement firstPointMenu = driver.findElement(By.cssSelector("#menu-list > li:first-child > a"));
         WebElement secondElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(2) > a"));
-
-
         String actualhrefValue = firstPointMenu.getAttribute("href");
         assertEquals("Значение атрибута href отличается от ожидаемого!",
                 actualhrefValue, "https://psycholog-vam.ru/#");
         secondElementMenu.click();
         String title = driver.getTitle();
         assertEquals("При переходе значение title открытой страницы не соответсвует ожиданию!",
-                title, "Раздел 1");
+                title, "About me");
         driver.navigate().to("https://psycholog-vam.ru/");
         WebElement thirdElementMenu =  driver.findElement(By.cssSelector("#menu-list > li:nth-child(3) > a"));
         thirdElementMenu.click();
@@ -68,7 +71,7 @@ public class CheckingMainPage {
         String title3 = driver.getTitle();
         assertEquals("При переходе значение title открытой страницы не соответсвует ожиданию!", title3,
                 "Все публикации");
-
+        System.out.println("Tests for checkingMenuMainPage(): completed successfully!");
     }
 
     @Test
@@ -79,6 +82,7 @@ public class CheckingMainPage {
         WebElement wbtext8 = driver.findElement(By.cssSelector("#wb_Text8 span"));
         boolean isVisible = wbtext8.isDisplayed();
         assertTrue("Элемент Контакты не отображается на экране!", isVisible);
+        System.out.println("Tests for chekFifthElementMenu(): completed successfully!");
     }
 
     @Test
@@ -86,7 +90,8 @@ public class CheckingMainPage {
         WebElement introButton = driver.findElement(By.cssSelector("#introButton"));
         introButton.click();
         String title = driver.getTitle();
-        assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "Раздел 1");
+        assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "About me");
+        System.out.println("Tests for chekIntroButtonElement(): completed successfully!");
     }
 
     @Test
@@ -97,6 +102,7 @@ public class CheckingMainPage {
         whyButton.click();
         String title = driver.getTitle();
         assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "Раздел 3");
+        System.out.println("Tests for chekWhyButtonElement(): completed successfully!");
 
     }
 
@@ -108,8 +114,7 @@ public class CheckingMainPage {
         button2.click();
         String title = driver.getTitle();
         assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "ККП");
-
-
+        System.out.println("Tests for chekButton2Element(): completed successfully!");
     }
 
     @Test
@@ -120,6 +125,7 @@ public class CheckingMainPage {
         howButton.click();
         String title = driver.getTitle();
         assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "Coaching");
+        System.out.println("Tests for chekHowButtonElement(): completed successfully!");
     }
 
     @Test
@@ -129,6 +135,7 @@ public class CheckingMainPage {
                 publication);
         boolean isVisible =  publication.isDisplayed();
         assertTrue("Элемент Публикации не отображается на экране!", isVisible);
+        System.out.println("Tests for checkingPublicationSection(): completed successfully!");
     }
 
     @Test
@@ -146,6 +153,7 @@ public class CheckingMainPage {
         WebElement blogTextSpan = driver.findElement(By.cssSelector("#Article1 .blogtext span"));
         String mainText = blogTextSpan.getText();
         assertNotEquals("Loading content...", blogTextSpan, "Не выполнена загрузка данных content!");
+        System.out.println("Tests for checkingPublicationBlock(): completed successfully!");
     }
 
     @Test
@@ -160,16 +168,19 @@ public class CheckingMainPage {
         Alert alert = driver.switchTo().alert();
         String alertText = alert.getText();
         assertNotNull(alertText, "Alert не отображается на экране!");
+        System.out.println("Tests for checkRequestConsultation(): completed successfully!");
     }
 
     @Test
     public void checkButton1Element() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement button1 = driver.findElement(By.cssSelector("#Button1"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",
                 button1);
         button1.click();
-        WebElement logoElement = driver.findElement(By.cssSelector("#Picture1"));
+        WebElement logoElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#RollOver1 a")));
         boolean logoIsVisible = logoElement.isDisplayed();
         assertTrue("Скролл до header не выполнен!", logoIsVisible);
+        System.out.println("Tests for checkButton1Element(): completed successfully");
     }
 }
