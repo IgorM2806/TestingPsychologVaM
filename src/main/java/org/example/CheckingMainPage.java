@@ -36,7 +36,6 @@ public class CheckingMainPage {
         String title = driver.getTitle();
         assert title.contains("psycholog-vam");
         System.out.println("Tests for logoSearch(): completed successfully!");
-        //Thread.sleep(500);
     }
 
     @Test
@@ -48,30 +47,43 @@ public class CheckingMainPage {
         System.out.println("Tests for logoSearch(): completed successfully!");
     }
     @Test
-    public void checkingMenuMainPage()  throws InterruptedException {
+    public void checkingMenuMainPageFirstPointMenu()  throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         WebElement firstPointMenu = driver.findElement(By.cssSelector("#menu-list > li:first-child > a"));
-        WebElement secondElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(2) > a"));
-        String actualhrefValue = firstPointMenu.getAttribute("href");
+        String actualHrefValue = firstPointMenu.getAttribute("href");
         assertEquals("Значение атрибута href отличается от ожидаемого!",
-                actualhrefValue, "https://psycholog-vam.ru/#");
+                actualHrefValue, "https://psycholog-vam.ru/#");
+        System.out.println("Tests for checkingMenuMainPageFirstPointMenu(): completed successfully!");
+    }
+
+    @Test
+    public void checkingMenuMainPageSecondElementMenu() throws InterruptedException {
+        WebElement secondElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(2) > a"));
         secondElementMenu.click();
         String title = driver.getTitle();
         assertEquals("При переходе значение title открытой страницы не соответсвует ожиданию!",
                 title, "About me");
-        driver.navigate().to("https://psycholog-vam.ru/");
+        System.out.println("Tests for checkingMenuMainPageSecondElementMenu(): completed successfully!");
+    }
+
+    @Test
+    public void checkingMenuMainPageThirdElementMenu() throws InterruptedException {
         WebElement thirdElementMenu =  driver.findElement(By.cssSelector("#menu-list > li:nth-child(3) > a"));
         thirdElementMenu.click();
         String title2 = driver.getTitle();
         assertEquals("При переходе значение title открытой страницы не соответсвует ожиданию!", title2,
                 "Education");
-        driver.navigate().to("https://psycholog-vam.ru/");
+        System.out.println("Tests for checkingMenuMainPageThirdElementMenu(): completed successfully!");
+    }
+
+    @Test
+    public void checkingMenuMainPageFourthElementMenu() throws InterruptedException {
         WebElement fourthElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(4) > a"));
         fourthElementMenu.click();
         String title3 = driver.getTitle();
         assertEquals("При переходе значение title открытой страницы не соответсвует ожиданию!", title3,
                 "Все публикации");
-        System.out.println("Tests for checkingMenuMainPage(): completed successfully!");
+        System.out.println("Tests for checkingMenuMainPageFourthElementMenu(): completed successfully!");
     }
 
     @Test
@@ -139,7 +151,7 @@ public class CheckingMainPage {
     }
 
     @Test
-    public void checkingPublicationBlock()  throws InterruptedException{
+    public void checkingPublicationBlockDatePublished()  throws InterruptedException{
         WebElement publication = driver.findElement(By.cssSelector("#Article1"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",
                 publication);
@@ -147,13 +159,29 @@ public class CheckingMainPage {
         String fullBlogSubjectText =  blogSubjectSpan.getText();
         String datePublished = fullBlogSubjectText.split("-")[0].trim();
         assertNotEquals("Loading date... - ", datePublished, "Не выполнена загрузка данных date!");
-        WebElement articleLink = driver.findElement(By.cssSelector("#Article1 .blogsubject a"));
-        String articleTitle = articleLink.getText();
-        assertNotEquals("Loading title...", articleTitle, "Не выполнена загрузка данных title!");
+        System.out.println("Tests for checkingPublicationBlockDatePublished(): completed successfully!");
+
+    }
+
+    @Test
+    public void checkingPublicationBlockBlogTextSpan() throws InterruptedException{
+        WebElement publication = driver.findElement(By.cssSelector("#Article1"));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",
+                publication);
         WebElement blogTextSpan = driver.findElement(By.cssSelector("#Article1 .blogtext span"));
         String mainText = blogTextSpan.getText();
         assertNotEquals("Loading content...", blogTextSpan, "Не выполнена загрузка данных content!");
-        System.out.println("Tests for checkingPublicationBlock(): completed successfully!");
+        System.out.println("Tests for checkingPublicationBlockBlogTextSpan(): completed successfully!");
+    }
+
+    @Test
+    public void checkingPublicationBlockArticleLink() throws InterruptedException{
+        WebElement publication = driver.findElement(By.cssSelector("#Article1"));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",
+                publication);
+        WebElement articleLink = driver.findElement(By.cssSelector("#Article1 .blogsubject a"));
+        String articleTitle = articleLink.getText();
+        assertNotEquals("Loading title...", articleTitle, "Не выполнена загрузка данных title!");
     }
 
     @Test
