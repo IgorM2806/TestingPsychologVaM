@@ -17,8 +17,7 @@ public class CheckingAboutMePage {
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver",  "C:\\Users\\User\\distr\\psychologVaM\\" +
-                "TestingPsychologVaM_2\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",  "C:\\Users\\User\\distr\\psychologVaM\\TestingPsychologVaM_2\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://psycholog-vam.ru/SpecialistProfile.html");
         driver.manage().window().maximize();

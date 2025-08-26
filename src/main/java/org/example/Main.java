@@ -25,6 +25,7 @@ public class Main {
         CheckingMainPage.setTestClasses(new Class[]{
                 CheckingMainPage.class
         });
+
         testNGCheckingAboutMePage.run();
         CheckingConsultationRequestForms.run();
         CheckingContactForms.run();
