@@ -12,11 +12,17 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <groovy.version>3.0.25</groovy.version>
-        <spock.version>2.3-groovy-3.0</spock.version>
     </properties>
 
     <dependencies>
+        <!-- Allure for capturing results from JUnit 5 -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>2.20.1</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -27,25 +33,7 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.7.1</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.spockframework</groupId>
-            <artifactId>spock-core</artifactId>
-            <version>2.3-groovy-3.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy</artifactId>
-            <version>${groovy.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy</artifactId>
-            <version>3.0.25</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -62,12 +50,12 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>junit</groupId>-->
+<!--            <artifactId>junit</artifactId>-->
+<!--            <version>4.13.2</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -76,8 +64,24 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.5.3</version>
+        </dependency>
 
+        <!-- Logback for logging configuration -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.12</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.16</version>
+        </dependency>
 
     </dependencies>
 
@@ -120,6 +124,57 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+                <configuration>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <reportsDirectory>${project.basedir}/allure-results</reportsDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.17.0</version>
+                <configuration>
+                    <reportVersion>2.18.1</reportVersion>
+                    <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
+                    <outputDirectory>${project.basedir}/allure-report</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>clean-allure-directories</id>
+                        <phase>initialize</phase> <!-- Изменено с pre-integration-test на initialize -->
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <delete dir="./allure-results"/>
+                                <mkdir dir="./allure-results"/>
+                                <delete dir="./allure-report"/>
+                                <mkdir dir="./allure-report"/>
+                            </target>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

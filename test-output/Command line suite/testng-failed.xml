@@ -3,16 +3,13 @@
 <suite name="Failed suite [Command line suite]">
   <test thread-count="5" name="Command line test(failed)">
     <classes>
-      <class name="org.example.CheckingMainPage">
+      <class name="org.example.mainPage.CheckingContactFormsTests">
         <methods>
-          <include name="checkingMenuMainPage"/>
-          <include name="chekIntroButtonElement"/>
-          <include name="checkButton1Element"/>
+          <include name="checkingCFCallMe"/>
           <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="logoSearch"/>
+          <include name="SetUp"/>
         </methods>
-      </class> <!-- org.example.CheckingMainPage -->
+      </class> <!-- org.example.mainPage.CheckingContactFormsTests -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->
