@@ -5,15 +5,15 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.example.BaseTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Epic("Тестирование страницы 'Главная'")
 @Feature("Проверка переходов по элементам навигации страницы.")
@@ -34,8 +34,8 @@ public class CheckNavigationMainTests extends BaseTest {
         String actualHrefValue = firstPointMenu.getAttribute("href");
 
         try {
-            assertEquals("Значение атрибута href отличается от ожидаемого!",
-                    actualHrefValue, "https://psycholog-vam.ru/index.php");
+            assertEquals("https://psycholog-vam.ru/index.php",
+                    actualHrefValue, "Значение атрибута href отличается от ожидаемого!");
             logger.info("Tests for checkingMenuMainPageFirstPointMenu(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'checkTitle': ", e);
@@ -53,8 +53,8 @@ public class CheckNavigationMainTests extends BaseTest {
         String title = driver.getTitle();
 
         try {
-            assertEquals("При переходе значение title открытой страницы не соответсвует ожиданию!",
-                    title, "About me");
+            assertEquals("About me",
+                    title, "При переходе значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for checkingMenuMainPageSecondElementMenu(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'checkTitle': ", e);
@@ -72,8 +72,8 @@ public class CheckNavigationMainTests extends BaseTest {
         String title2 = driver.getTitle();
 
         try {
-            assertEquals("При переходе значение title открытой страницы не соответствует ожиданию!", title2,
-                    "Education");
+            assertEquals("Education", title2,
+                    "При переходе значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for checkingMenuMainPageThirdElementMenu(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'checkTitle': ", e);
@@ -91,8 +91,8 @@ public class CheckNavigationMainTests extends BaseTest {
         String title3 = driver.getTitle();
 
         try {
-            assertEquals("При переходе значение title открытой страницы не соответствует ожиданию!", title3,
-                    "Все публикации");
+            assertEquals("Все публикации", title3,
+                    "При переходе значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for checkingMenuMainPageFourthElementMenu(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'checkTitle': ", e);
@@ -112,7 +112,7 @@ public class CheckNavigationMainTests extends BaseTest {
         boolean isVisible = controlElement.isDisplayed();
 
         try {
-            assertTrue("Элемент Контакты не отображается на экране!", isVisible);
+            assertTrue(isVisible, "Элемент Контакты не отображается на экране!");
             logger.info("Tests for chekFifthElementMenu(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'chekFifthElementMenu': ",  e);
@@ -130,7 +130,7 @@ public class CheckNavigationMainTests extends BaseTest {
         boolean isVisible = controlElement.isDisplayed();
 
         try {
-            assertTrue("Элемент 'Заявка на консультацию' не отображается после перехода.", isVisible);
+            assertTrue(isVisible, "Элемент 'Заявка на консультацию' не отображается после перехода.");
             logger.info("Tests for chekSixthElementMenu(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'chekSixthElementMenu': ", e);
@@ -148,7 +148,7 @@ public class CheckNavigationMainTests extends BaseTest {
         String title = driver.getTitle();
 
         try {
-            assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "About me");
+            assertEquals("About me", title, "Значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for chekButtonLearnMoreAboutFirstSection(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'chekButtonLearnMoreAboutFirstSection': ", e);
@@ -167,9 +167,9 @@ public class CheckNavigationMainTests extends BaseTest {
         whyButton.click();
         String title = driver.getTitle();
 
-        try {
-            assertEquals("Значение title открытой страницы не соответствует ожиданию!",
-                    title, "Psychological counseling");
+        try { //
+            assertEquals("Psychological counseling",
+                    title, "Значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for chekButtonLearnMorePC(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'chekButtonLearnMorePC()': ", e);
@@ -188,7 +188,7 @@ public class CheckNavigationMainTests extends BaseTest {
         String title = driver.getTitle();
 
         try {
-            assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "KKP");
+            assertEquals("KKP", title, "Значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for chekButtonLearnMoreCCG()(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'chekButtonLearnMoreCCG()()': ", e);
@@ -208,7 +208,7 @@ public class CheckNavigationMainTests extends BaseTest {
         String title = driver.getTitle();
 
         try {
-            assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "Coaching");
+            assertEquals("Coaching", title, "Значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for chekButtonLearnMoreCoaching(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'chekButtonLearnMoreCoaching': ", e);
@@ -228,7 +228,7 @@ public class CheckNavigationMainTests extends BaseTest {
         boolean logoIsVisible = logoElement.isDisplayed();
 
         try {
-            assertTrue("Скролл до header не выполнен!", logoIsVisible);
+            assertTrue(logoIsVisible, "Скролл до header не выполнен!");
             logger.info("Tests for checkButtonUp(): completed successfully!");
         } catch (AssertionError e) {
             logger.error("Ошибка в тесте  'checkButtonUp': ", e);

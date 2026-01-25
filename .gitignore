@@ -1,5 +1,7 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
+# Maven Wrapper
+./.mvn/wrapper/maven-wrapper.jar
+
+# Target directories in source code
 !**/src/main/**/target/
 !**/src/test/**/target/
 
@@ -36,3 +38,13 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# Allure Reports & Results
+/allure-results/
+/allure-report/
+
+# Logs directory
+/logs/
+
+# Target directory for builds
+/target/

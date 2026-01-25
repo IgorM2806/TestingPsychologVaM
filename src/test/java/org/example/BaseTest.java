@@ -1,6 +1,8 @@
 package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -8,8 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
@@ -21,7 +21,7 @@ public abstract class BaseTest {
         this.baseUrl = baseUrl;
     }
 
-    @BeforeMethod
+    @BeforeEach
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -29,7 +29,7 @@ public abstract class BaseTest {
         driver.manage().window().maximize();
     }
 
-    @AfterMethod
+    @AfterEach
     public void tearDown() {
         if(driver != null){
             driver.quit();           // Безопасное завершение драйвера

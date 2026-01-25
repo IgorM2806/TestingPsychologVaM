@@ -5,14 +5,14 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.example.BaseTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertTrue;
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Epic("Тестирование страницы 'Обо мне'.")
 @Feature("Проверка переходов по элементам навигации страницы 'Обо мне'.")
@@ -33,8 +33,8 @@ public class CheckNavigationAboutmeTests extends BaseTest {
         String title = driver.getTitle();
 
         try {
-            assertEquals("Значение title целевой страницы не соответствует ожиданию.",
-                    title, "psycholog-vam");
+            assertEquals("psycholog-vam",
+                    title, "Значение title целевой страницы не соответствует ожиданию.");
         }catch (AssertionError e){
             logger.error("Тест 'CheckingMainPoint()' завершился с ошибкой: ", e);
             throw e;
@@ -51,7 +51,7 @@ public class CheckNavigationAboutmeTests extends BaseTest {
         String title = driver.getTitle();
 
         try {
-            assertEquals("Значение title целевой страницы не соответствует ожиданию.", title, "About me");
+            assertEquals("About me", title, "Значение title целевой страницы не соответствует ожиданию.");
             logger.info("Тест 'CheckingAboutMePoint()' завершился успешно.");
         }catch (AssertionError e){
             logger.error("Тест 'CheckingAboutMePoint()' завершился с ошибкой: ", e);
@@ -68,7 +68,7 @@ public class CheckNavigationAboutmeTests extends BaseTest {
         String title = driver.getTitle();
 
         try {
-            assertEquals("Значение title целевой страницы не соответствует ожиданию.", title, "Education");
+            assertEquals("Education", title, "Значение title целевой страницы не соответствует ожиданию.");
             logger.info("Тест 'CheckingEducationPoint()' завершился успешно.");
         }catch (AssertionError e){
             logger.error("Тест 'CheckingEducationPoint()' завершился с ошибкой: ", e);
@@ -86,7 +86,7 @@ public class CheckNavigationAboutmeTests extends BaseTest {
         String title = driver.getTitle();
 
         try{
-            assertEquals("Значение title целевой страницы не соответствует ожиданию.",  title, "Все публикации");
+            assertEquals("Все публикации",  title, "Значение title целевой страницы не соответствует ожиданию.");
             logger.info("Тест 'CheckingAllPublicationsPoint()' завершился успешно.");
         }catch (AssertionError e){
             logger.error("Тест 'CheckingAllPublicationsPoint()' завершился с ошибкой: ", e);

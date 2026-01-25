@@ -1,0 +1,4 @@
+16:57:03.706 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+16:57:03.731 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+16:57:05.146 [main] INFO  o.e.m.CheckingSubmitRequestFormTests - Starting test 'checkingEmptyConsentCheckbox'.
+16:57:05.275 [main] INFO  o.e.m.CheckingSubmitRequestFormTests - Tests for checkingEmptyConsentCheckbox(): completed successfully!

@@ -3,13 +3,13 @@ package org.example.publicationsPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import org.example.BaseTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CheckingPublicationsPageTests extends BaseTest {
     private static final Logger logger = LoggerFactory.getLogger(CheckingPublicationsPageTests.class);
@@ -43,8 +43,8 @@ public class CheckingPublicationsPageTests extends BaseTest {
         WebElement heading1 =  driver.findElement(By.id("wb_DropList1"));
 
         try {
-            assertEquals("Содержание heading1 не соответствует ожидаемому значению!", heading1.getText(),
-                    "Все публикации");
+            assertEquals("Все публикации", heading1.getText(),
+                    "Содержание heading1 не соответствует ожидаемому значению!");
             logger.info("Tests for checkingPageTitle(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Тест 'checkingPageTitle()' завершился с ошибкой:", e);

@@ -5,13 +5,14 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.example.BaseTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import static org.testng.AssertJUnit.assertEquals;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Epic("Тестирование страницы 'Образование'.")
 @Feature("Проверка отображения основных элементов страницы.")
@@ -48,11 +49,12 @@ public class CheckingEducationPageTests extends BaseTest {
         WebElement heading1 =  driver.findElement(By.id("Heading1"));
 
         try {
-            assertEquals("Содержание heading1 не соответствует ожидаемому значению!", heading1.getText(),
-                    "Образование");
+            assertEquals("Образование", heading1.getText(),
+                    "Содержание heading1 не соответствует ожидаемому значению!");
             logger.info("Tests for checkingPageTitle(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Тест 'checkingPageTitle()' завершился с ошибкой: ");
+            throw e;
         }
     }
 }

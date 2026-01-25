@@ -5,15 +5,16 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.example.BaseTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertNotNull;
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 @Epic("Тестирование страницы 'Главная'")
 @Feature("Проверка флормы 'Оставить заявку'")
@@ -31,11 +32,9 @@ public class CheckingSubmitRequestFormTests extends BaseTest {
     public void checkRequestConsultation()  throws InterruptedException {
         logger.info("Starting test 'checkRequestConsultation'.");
         WebElement requestConsultation = driver.findElement(By.cssSelector("#LayoutGrid3 .col-2"));
-        WebElement privacyConsentElement = driver.findElement(By.cssSelector("#privacyConsent"));
         scrollToElement(requestConsultation);
-        WebElement formButton = driver.findElement(By.cssSelector("#formButton"));
-        privacyConsentElement.click();
-        formButton.click();
+        clickingElement(By.cssSelector("#privacyConsent"));
+        clickingElement(By.cssSelector("#formButton"));
         Alert alert = driver.switchTo().alert();
         String alertText = alert.getText();
 
@@ -44,6 +43,7 @@ public class CheckingSubmitRequestFormTests extends BaseTest {
             logger.info("Tests for checkRequestConsultation(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'checkRequestConsultation': ", e);
+            throw e;
         }
     }
 
@@ -55,16 +55,17 @@ public class CheckingSubmitRequestFormTests extends BaseTest {
         logger.info("Starting test 'checkingEmptyConsentCheckbox'.");
         WebElement requestConsultation = driver.findElement(By.cssSelector("#LayoutGrid3 .col-2"));
         scrollToElement(requestConsultation);
-        WebElement formButton = driver.findElement(By.cssSelector("#formButton"));
-        formButton.click();
+        clickingElement(By.cssSelector("#formButton"));
         String alertText = driver.switchTo().alert().getText();
+        System.out.println("alert: " + alertText);
 
         try {
-            assertEquals("Отсутствует Аллерт - 'Необходимо согласиться с условиями конфиденциальности.'", alertText,
-                    "Необходимо согласиться с условиями конфиденциальности.");
+            assertEquals("Необходимо согласиться с условиями конфиденциальности.", alertText,
+                    "Отсутствует Аллерт - 'Необходимо согласиться с условиями конфиденциальности'.");
             logger.info("Tests for checkingEmptyConsentCheckbox(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'checkingEmptyConsentCheckbox': ", e);
+            throw e;
         }
     }
 }

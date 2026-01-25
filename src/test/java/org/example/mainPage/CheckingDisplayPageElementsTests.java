@@ -5,14 +5,14 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.example.BaseTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Epic("Тестирование страницы 'Главная'")
 @Feature("Проверка отображения основных элементов Главной страницы.")
@@ -48,8 +48,8 @@ public class CheckingDisplayPageElementsTests extends BaseTest {
         String actualSrcValue = logo.getAttribute("src");
 
         try {
-            assertEquals("Атрибут src не соответсвует ожидаемому значению!", actualSrcValue,
-                    "https://psycholog-vam.ru/images/DSC_6602_smol.JPG");
+            assertEquals("https://psycholog-vam.ru/images/DSC_6602_smol.JPG", actualSrcValue,
+                    "Атрибут src не соответсвует ожидаемому значению!");
             logger.info("Tests for logoSearch(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'checkTitle': ", e);
@@ -67,7 +67,7 @@ public class CheckingDisplayPageElementsTests extends BaseTest {
         boolean isVisible =  publication.isDisplayed();
 
         try {
-            assertTrue("Элемент Публикации не отображается на экране!", isVisible);
+            assertTrue(isVisible, "Элемент Публикации не отображается на экране!");
             logger.info("Tests for checkingPublicationSection(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'checkingPublicationSection': ", e);
