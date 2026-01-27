@@ -1,9 +1,6 @@
 package org.example.mainPage;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -28,9 +25,10 @@ public class CheckNavigationMainTests extends BaseTest {
     @Test
     @Description("Проверка переходов из основного меню страницы.")
     @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Главная'")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageFirstPointMenu()  throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageFirstPointMenu'.");
-        WebElement firstPointMenu = driver.findElement(By.cssSelector("#menu-list > li:first-child > a"));
+        WebElement firstPointMenu = basePages.findElement(By.cssSelector("#menu-list > li:first-child > a"));
         String actualHrefValue = firstPointMenu.getAttribute("href");
 
         try {
@@ -46,10 +44,10 @@ public class CheckNavigationMainTests extends BaseTest {
     @Test
     @Description("Проверка переходов из основного меню страницы.")
     @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Обо мне'")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageSecondElementMenu() throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageSecondElementMenu'.");
-        WebElement secondElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(2) > a"));
-        secondElementMenu.click();
+        clickingElement(By.cssSelector("#menu-list > li:nth-child(2) > a"));
         String title = driver.getTitle();
 
         try {
@@ -65,10 +63,10 @@ public class CheckNavigationMainTests extends BaseTest {
     @Test
     @Description("Проверка переходов из основного меню страницы.")
     @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Образование'")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageThirdElementMenu() throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageThirdElementMenu'.");
-        WebElement thirdElementMenu =  driver.findElement(By.cssSelector("#menu-list > li:nth-child(3) > a"));
-        thirdElementMenu.click();
+        clickingElement(By.cssSelector("#menu-list > li:nth-child(3) > a"));
         String title2 = driver.getTitle();
 
         try {
@@ -84,10 +82,10 @@ public class CheckNavigationMainTests extends BaseTest {
     @Test
     @Description("Проверка переходов из основного меню страницы.")
     @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Публикации'")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageFourthElementMenu() throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageFourthElementMenu'.");
-        WebElement fourthElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(4) > a"));
-        fourthElementMenu.click();
+        clickingElement(By.cssSelector("#menu-list > li:nth-child(4) > a"));
         String title3 = driver.getTitle();
 
         try {
@@ -103,11 +101,10 @@ public class CheckNavigationMainTests extends BaseTest {
     @Test
     @Description("Проверка переходов из основного меню Главной страницы.")
     @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Контакты'")
+    @Severity(SeverityLevel.NORMAL)
     public void chekFifthElementMenu() throws  InterruptedException {
         logger.info("Starting test 'chekFifthElementMenu'.");
-        WebElement fifthElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(5) > a"));
-        fifthElementMenu.click();
-
+        clickingElement(By.cssSelector("#menu-list > li:nth-child(5) > a"));
         WebElement controlElement = waitForElement(By.cssSelector("#wb_Text8 span"), 5);
         boolean isVisible = controlElement.isDisplayed();
 
@@ -122,10 +119,10 @@ public class CheckNavigationMainTests extends BaseTest {
     @Test
     @Description("Проверка переходов из основного меню Главной страницы.")
     @Step("Целевой раздел главной страницы отображается на экране,")
+    @Severity(SeverityLevel.NORMAL)
     public void chekSixthElementMenu() throws InterruptedException {
         logger.info("Starting test 'chekSixthElementMenu'.");
-        WebElement sixthElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(6) > a"));
-        sixthElementMenu.click();
+        clickingElement(By.cssSelector("#menu-list > li:nth-child(6) > a"));
         WebElement controlElement = waitForElement(By.cssSelector("#wb_Text6 span"), 5);
         boolean isVisible = controlElement.isDisplayed();
 
@@ -141,10 +138,10 @@ public class CheckNavigationMainTests extends BaseTest {
     @Test
     @Description("Проверка переходов по элементам навигации страницы.")
     @Step("Целевая страница соответствует ожиданию при переходе по кнопке 'Узнать больше' первого раздела.")
+    @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMoreAboutFirstSection() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMoreAboutFirstSection'.");
-        WebElement introButton = driver.findElement(By.cssSelector("#introButton"));
-        introButton.click();
+        clickingElement(By.cssSelector("#introButton"));
         String title = driver.getTitle();
 
         try {
@@ -160,14 +157,15 @@ public class CheckNavigationMainTests extends BaseTest {
     @Description("Проверка переходов по элементам навигации страницы.")
     @Step("Целевая страница соответствует ожиданию при переходе по кнопке 'Узнать больше'" +
             " раздела 'Психологическое консультирование'.")
+    @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMorePC() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMorePC'.");
-        WebElement whyButton = driver.findElement(By.cssSelector("#whyButton"));
+        WebElement whyButton = basePages.findElement(By.cssSelector("#whyButton"));
         scrollToElement(whyButton);
         whyButton.click();
         String title = driver.getTitle();
 
-        try { //
+        try {
             assertEquals("Psychological counseling",
                     title, "Значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for chekButtonLearnMorePC(): completed successfully!");
@@ -180,9 +178,10 @@ public class CheckNavigationMainTests extends BaseTest {
     @Description("Проверка переходов по элементам навигации страницы.")
     @Step("Целевая страница соответствует ожиданию при переходе по кнопке 'Узнать больше'" +
             " раздела 'Карьерное консультирование и профориентация'.")
+    @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMoreCCG() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMoreCCG()'.");
-        WebElement button2 = driver.findElement(By.cssSelector("#Button2"));
+        WebElement button2 = basePages.findElement(By.cssSelector("#Button2"));
         scrollToElement(button2);
         button2.click();
         String title = driver.getTitle();
@@ -200,9 +199,10 @@ public class CheckNavigationMainTests extends BaseTest {
     @Description("Проверка переходов по элементам навигации страницы.")
     @Step("Целевая страница соответствует ожиданию при переходе по кнопке 'Узнать больше'" +
             " раздела 'Коучинг'.")
+    @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMoreCoaching() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMoreCoaching'.");
-        WebElement howButton = driver.findElement(By.cssSelector("#howButton"));
+        WebElement howButton = basePages.findElement(By.cssSelector("#howButton"));
         scrollToElement(howButton);
         howButton.click();
         String title = driver.getTitle();
@@ -219,9 +219,10 @@ public class CheckNavigationMainTests extends BaseTest {
     @Test
     @Description("Проверка переходов по элементам навигации страницы.")
     @Step("Переход выполнен успешно отображается логотип.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkButtonUp() throws InterruptedException {
         logger.info("Starting test 'checkButtonUp'.");
-        WebElement button1 = driver.findElement(By.cssSelector("#Button1"));
+        WebElement button1 = basePages.findElement(By.cssSelector("#Button1"));
         scrollToElement(button1);
         button1.click();
         WebElement logoElement = waitForElement(By.cssSelector("#RollOver1 a"), 5);

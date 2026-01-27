@@ -1,9 +1,6 @@
 package org.example.mainPage;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -26,9 +23,10 @@ public class CheckingContactFormsTests extends BaseTest {
     @Test
     @Description("Проверка отображения информации в разделе 'контакты' на Главной странице.")
     @Step("В разделе 'Email' отображается валидная информация.")
+    @Severity(SeverityLevel.CRITICAL)
     public void checkingCFMailElement() throws InterruptedException {
         logger.info("Starting test 'checkingCFMailElement()'.");
-        WebElement wb_Text8 = driver.findElement(By.cssSelector("#wb_Text8"));
+        WebElement wb_Text8 = basePages.findElement(By.cssSelector("#wb_Text8"));
         scrollToElement(wb_Text8);
         WebElement mailelement =  driver.findElement(By.cssSelector("#formListView li:first-child p"));
 
@@ -45,11 +43,12 @@ public class CheckingContactFormsTests extends BaseTest {
     @Test
     @Description("Проверка отображения информации в разделе 'Контакты' на Главной странице.")
     @Step("В разделе 'Позвони мне' отображается валидная информация! ")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingCFCallMe() throws InterruptedException {
         logger.info("Starting test 'checkingCFCallMe()'.");
-        WebElement wb_Text8 = driver.findElement(By.cssSelector("#wb_Text8"));
+        WebElement wb_Text8 = basePages.findElement(By.cssSelector("#wb_Text8"));
         scrollToElement(wb_Text8);
-        WebElement callMe = driver.findElement(By.cssSelector("#formListView li:nth-child(2) p"));
+        WebElement callMe = basePages.findElement(By.cssSelector("#formListView li:nth-child(2) p"));
         try {
             assertEquals("+7 903 344 89 75", callMe.getText(),
                     "Значение в поле 'Позвони мне' не соответствует ожиданию!");
@@ -63,11 +62,12 @@ public class CheckingContactFormsTests extends BaseTest {
     @Test
     @Description("Проверка отображения информации в разделе 'Контакты' на Главной странице.")
     @Step("В разделе 'Расположение' отображается валидная информация!")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingCFLocation() throws InterruptedException {
         logger.info("Starting test 'checkingCFLocation()'.");
-        WebElement wb_Text8 = driver.findElement(By.cssSelector("#wb_Text8"));
+        WebElement wb_Text8 = basePages.findElement(By.cssSelector("#wb_Text8"));
         scrollToElement(wb_Text8);
-        WebElement location = driver.findElement(By.cssSelector("#formListView li:nth-child(3) p"));
+        WebElement location = basePages.findElement(By.cssSelector("#formListView li:nth-child(3) p"));
 
         try {
             assertEquals("Город Казань", location.getText(),

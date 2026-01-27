@@ -1,6 +1,8 @@
 package org.example.publicationsPage;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import org.example.BaseTest;
 import org.junit.jupiter.api.Test;
@@ -22,6 +24,7 @@ public class CheckingNavigationElementsPublicationPageTests extends BaseTest {
     @Test
     @Description("Проверка переходов в главном меню страницы 'Публикации'.")
     @Step("Переход по пункту Главная соответствует ожиданию.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkMainPoint()  throws InterruptedException {
         logger.info("Starting test 'checkMainPoint()'.");
         clickingElement(By.cssSelector("#menu-list li:first-child a"));
@@ -40,6 +43,7 @@ public class CheckingNavigationElementsPublicationPageTests extends BaseTest {
     @Test
     @Description("Проверка переходов в главном меню страницы 'Публикации'.")
     @Step("Переход пу пункту 'Обо мне' соответствует ожиданию.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkSecondPoint()  throws InterruptedException {
         logger.info("Starting test 'checkSecondPoint()'.");
         clickingElement(By.cssSelector("#menu-list li:nth-child(2) a"));
@@ -57,6 +61,7 @@ public class CheckingNavigationElementsPublicationPageTests extends BaseTest {
     @Test
     @Description("Проверка переходов в главном меню страницы 'Публикации'.")
     @Step("Переход пу пункту 'Публикации' соответствует ожиданию.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkFourthPoint()  throws InterruptedException {
         logger.info("Starting test 'checkFourthPoint()'.");
         clickingElement(By.cssSelector("#menu-list li:nth-child(4) a"));
@@ -75,10 +80,11 @@ public class CheckingNavigationElementsPublicationPageTests extends BaseTest {
     @Test
     @Description("Проверка переходов в главном меню страницы 'Публикации'.")
     @Step("Переход пу пункту 'Публикации' соответствует ожиданию.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkFifthPoint()  throws InterruptedException {
         logger.info("Starting test 'checkFifthPoint()'.");
         clickingElement(By.cssSelector("#menu-list li:nth-child(5) a"));
-        WebElement dropList2 = driver.findElement(By.cssSelector("#wb_Text8"));
+        WebElement dropList2 = basePages.findElement(By.cssSelector("#wb_Text8"));
 
         try {
             assertTrue(dropList2.isDisplayed(), "Раздел 'Контакты' не отображается при переходе!");
@@ -92,10 +98,11 @@ public class CheckingNavigationElementsPublicationPageTests extends BaseTest {
     @Test
     @Description("Проверка переходов в главном меню страницы 'Публикации'.")
     @Step("Переход пу пункту 'Оставить заявку' соответствует ожиданию.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkSixPoint()  throws InterruptedException {
         logger.info("Starting test 'checkSixPoint()'.");
         clickingElement(By.cssSelector("#menu-list li:nth-child(6) a"));
-        WebElement dropList2 = driver.findElement(By.cssSelector("#wb_Text6"));
+        WebElement dropList2 = basePages.findElement(By.cssSelector("#wb_Text6"));
 
         try {
             assertTrue(dropList2.isDisplayed(), "Раздел 'Заявка на консультацию' не отображается при переходе!");

@@ -1,9 +1,6 @@
 package org.example.mainPage;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
@@ -29,9 +26,10 @@ public class CheckingSubmitRequestFormTests extends BaseTest {
     @Description("Проверка чекбокса в разделе 'Оставить заявку'.")
     @Step("При установке чекбокса не отображается alert с запросом" +
             " подтвердить согласие на обработку персональных данных.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkRequestConsultation()  throws InterruptedException {
         logger.info("Starting test 'checkRequestConsultation'.");
-        WebElement requestConsultation = driver.findElement(By.cssSelector("#LayoutGrid3 .col-2"));
+        WebElement requestConsultation = basePages.findElement(By.cssSelector("#LayoutGrid3 .col-2"));
         scrollToElement(requestConsultation);
         clickingElement(By.cssSelector("#privacyConsent"));
         clickingElement(By.cssSelector("#formButton"));
@@ -51,9 +49,10 @@ public class CheckingSubmitRequestFormTests extends BaseTest {
     @Description("Проверка чекбокса в разделе 'Оставить заявку'.")
     @Step("ПРИ ОТСУТСТВИИ установки чекбокса отображается предупреждение (alert)," +
             " запрашивающее подтверждение согласия на обработку персональных данных.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingEmptyConsentCheckbox()  throws InterruptedException {
         logger.info("Starting test 'checkingEmptyConsentCheckbox'.");
-        WebElement requestConsultation = driver.findElement(By.cssSelector("#LayoutGrid3 .col-2"));
+        WebElement requestConsultation = basePages.findElement(By.cssSelector("#LayoutGrid3 .col-2"));
         scrollToElement(requestConsultation);
         clickingElement(By.cssSelector("#formButton"));
         String alertText = driver.switchTo().alert().getText();

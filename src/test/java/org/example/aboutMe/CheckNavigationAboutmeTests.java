@@ -1,9 +1,6 @@
 package org.example.aboutMe;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -26,10 +23,10 @@ public class CheckNavigationAboutmeTests extends BaseTest {
     @Test
     @Description("Проверка переходов по элементам навигации страницы 'Обо мне'.")
     @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Главная'.")
+    @Severity(SeverityLevel.CRITICAL)
     public void CheckingMainPoint() {
         logger.info("Starting test 'CheckingMainPoint'.");
-        WebElement mainPoint = driver.findElement(By.cssSelector("#menu-list li:first-child a"));
-        mainPoint.click();
+        clickingElement(By.cssSelector("#menu-list li:first-child a"));
         String title = driver.getTitle();
 
         try {
@@ -44,10 +41,10 @@ public class CheckNavigationAboutmeTests extends BaseTest {
     @Test
     @Description("Проверка переходов по элементам навигации страницы 'Обо мне'.")
     @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Обо мне'.")
+    @Severity(SeverityLevel.CRITICAL)
     public void CheckingAboutMePoint() {
         logger.info("Starting test 'CheckingAboutMePoint'.");
-        WebElement aboutMe = driver.findElement(By.cssSelector("#menu-list li:nth-child(2) a"));
-        aboutMe.click();
+        clickingElement(By.cssSelector("#menu-list li:nth-child(2) a"));
         String title = driver.getTitle();
 
         try {
@@ -61,10 +58,10 @@ public class CheckNavigationAboutmeTests extends BaseTest {
     @Test
     @Description("Проверка переходов по элементам навигации страницы 'Образование'.")
     @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Образование'.")
+    @Severity(SeverityLevel.CRITICAL)
     public void CheckingEducationPoint() {
         logger.info("Starting test 'CheckingEducationPoint'.");
-        WebElement education = driver.findElement(By.cssSelector("#menu-list li:nth-child(3) a"));
-        education.click();
+        clickingElement(By.cssSelector("#menu-list li:nth-child(3) a"));
         String title = driver.getTitle();
 
         try {
@@ -79,10 +76,10 @@ public class CheckNavigationAboutmeTests extends BaseTest {
     @Test
     @Description("Проверка переходов по элементам навигации страницы 'Публикации'.")
     @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Публикации'.")
+    @Severity(SeverityLevel.CRITICAL)
     public void CheckingAllPublicationsPoint() {
         logger.info("Starting test 'CheckingAllPublicationsPoint'.");
-        WebElement allPublications =  driver.findElement(By.cssSelector("#menu-list li:nth-child(4) a"));
-        allPublications.click();
+        clickingElement(By.cssSelector("#menu-list li:nth-child(4) a"));
         String title = driver.getTitle();
 
         try{
@@ -97,11 +94,10 @@ public class CheckNavigationAboutmeTests extends BaseTest {
     @Test
     @Description("Проверка переходов по элементам навигации страницы 'Публикации'.")
     @Step("Отображается раздел 'Контакты' на Главной странице.")
+    @Severity(SeverityLevel.CRITICAL)
     public void CheckingContactsPoint() {
         logger.info("Starting test 'CheckingContactsPoint'.");
-        WebElement contacts =  driver.findElement(By.cssSelector("#menu-list li:nth-child(5) a"));
-        contacts.click();
-
+        clickingElement(By.cssSelector("#menu-list li:nth-child(5) a"));
         WebElement controlElement = waitForElement(By.cssSelector("#wb_Text8 span"), 5);
 
         try {
@@ -116,10 +112,10 @@ public class CheckNavigationAboutmeTests extends BaseTest {
     @Test
     @Description("Проверка переходов по элементам навигации страницы 'Публикации'.")
     @Step("Отображается раздел 'Контакты' на Главной странице.")
+    @Severity(SeverityLevel.CRITICAL)
     public void CheckingSubmitApplicationPoint() {
         logger.info("Starting test 'CheckingSubmitApplicationPoint()'.");
-        WebElement contacts =  driver.findElement(By.cssSelector("#menu-list li:nth-child(5) a"));
-        contacts.click();
+        clickingElement(By.cssSelector("#menu-list li:nth-child(5) a"));
 
         WebElement controlElement = waitForElement(By.cssSelector("#wb_Text8 span"), 5);
 

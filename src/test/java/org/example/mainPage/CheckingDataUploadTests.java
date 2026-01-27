@@ -1,9 +1,6 @@
 package org.example.mainPage;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -27,9 +24,10 @@ public class CheckingDataUploadTests extends BaseTest {
     @Test
     @Description("Проверка отображения раздела 'Публикации' на главной странице.")
     @Step("Данные успешно загружены с сервера.")
+    @Severity(SeverityLevel.CRITICAL)
     public void checkingPublicationBlockDatePublished()  throws InterruptedException{
         logger.info("Starting test 'checkingPublicationBlockDatePublished'.");
-        WebElement publication = driver.findElement(By.cssSelector("#Article1"));
+        WebElement publication = basePages.findElement(By.cssSelector("#Article1"));
         scrollToElement(publication);
         WebElement blogSubjectSpan = waitForElement(By.cssSelector("#Article1 .blogsubject"), 3);
         String fullBlogSubjectText =  blogSubjectSpan.getText();
@@ -46,9 +44,10 @@ public class CheckingDataUploadTests extends BaseTest {
     @Test
     @Description("Проверка отображения раздела 'Публикации' на главной странице.")
     @Step("Данные успешно загружены с сервера.")
+    @Severity(SeverityLevel.CRITICAL)
     public void checkingPublicationBlockBlogTextSpan() throws InterruptedException{
         logger.info("Starting test 'checkingPublicationBlockBlogTextSpan'.");
-        WebElement publication = driver.findElement(By.cssSelector("#Article1"));
+        WebElement publication = basePages.findElement(By.cssSelector("#Article1"));
         scrollToElement(publication);
         WebElement blogTextSpan = waitForElement(By.cssSelector("#Article1 .blogtext span"), 3);
         String mainText = blogTextSpan.getText();
@@ -65,13 +64,15 @@ public class CheckingDataUploadTests extends BaseTest {
     @Test
     @Description("Проверка отображения раздела 'Публикации' на главной странице.")
     @Step("Данные успешно загружены с сервера.")
+    @Severity(SeverityLevel.CRITICAL)
     public void checkingPublicationBlockArticleLink() throws InterruptedException{
         logger.info("Starting test 'checkingPublicationBlockArticleLink'.");
-        WebElement publication = driver.findElement(By.cssSelector("#Article1"));
+        WebElement publication = basePages.findElement(By.cssSelector("#Article1"));
         scrollToElement(publication);
         WebElement articleLink = waitForElement(By.cssSelector("#Article1 span"), 3);
         String articleTitle = articleLink.getText();
         System.out.println("articleTitle: " + articleTitle);
+
         try {
             assertFalse(articleTitle.contains("Сервис временно недоступен, извините за неудобства!"),
                     "Не выполнена загрузка данных!");

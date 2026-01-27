@@ -16,6 +16,7 @@ import java.time.Duration;
 public abstract class BaseTest {
     protected WebDriver driver;
     private String baseUrl;
+    protected BasePages basePages;
 
     public BaseTest(String baseUrl) {
         this.baseUrl = baseUrl;
@@ -27,6 +28,7 @@ public abstract class BaseTest {
         driver = new ChromeDriver();
         driver.get(baseUrl);
         driver.manage().window().maximize();
+        basePages = new BasePages(driver);
     }
 
     @AfterEach

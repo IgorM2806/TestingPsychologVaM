@@ -1,9 +1,6 @@
 package org.example.mainPage;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -26,9 +23,10 @@ public class CheckingConsultationRequestFormsTests extends BaseTest {
     @Test
     @Description("Проверка формы отправки заявки на консультацию.")
     @Step("Раздел 'Заявка на консультацию' отображается на странице 'Главная'.")
+    @Severity(SeverityLevel.CRITICAL)
     public void testCheckingConsultationForms() throws InterruptedException {
         logger.info("Tests for CheckingConsultationForms(): started.");
-        WebElement controlElement = driver.findElement(By.cssSelector("#wb_Text6 span"));
+        WebElement controlElement = basePages.findElement(By.cssSelector("#wb_Text6 span"));
         scrollToElement(controlElement);
 
         try {
@@ -43,11 +41,12 @@ public class CheckingConsultationRequestFormsTests extends BaseTest {
     @Test
     @Description("Проверка формы отправки заявки на консультацию.")
     @Step("Название поля 'Имя' соответствует ожиданию!")
+    @Severity(SeverityLevel.NORMAL)
     public void testCheckingConsultationFormLabel() throws InterruptedException {
         logger.info("Tests for CheckingConsultationFormLabel(): started.");
-        WebElement wb_Text6Element = driver.findElement(By.cssSelector("#wb_Text6 span"));
+        WebElement wb_Text6Element = basePages.findElement(By.cssSelector("#wb_Text6 span"));
         scrollToElement(wb_Text6Element);
-        WebElement consultationFormLabel =  driver.findElement(By.cssSelector("#consultationForm label"));
+        WebElement consultationFormLabel =  basePages.findElement(By.cssSelector("#consultationForm label"));
 
         try {
             assertEquals("Имя", consultationFormLabel.getText(),
@@ -62,11 +61,12 @@ public class CheckingConsultationRequestFormsTests extends BaseTest {
     @Test
     @Description("Проверка формы отправки заявки на консультацию.")
     @Step("Значение поля 'placeholder' для поля ввода 'Имя' соответствует ожиданию!")
+    @Severity(SeverityLevel.NORMAL)
     public void testCheckingConsultationForNameValue() throws InterruptedException {
         logger.info("Tests for CheckingConsultationForNameValue(): started.");
-        WebElement wb_Text6Element = driver.findElement(By.cssSelector("#wb_Text6 span"));
+        WebElement wb_Text6Element = basePages.findElement(By.cssSelector("#wb_Text6 span"));
         scrollToElement(wb_Text6Element);
-        WebElement formNameElement = driver.findElement(By.cssSelector("#formName"));
+        WebElement formNameElement = basePages.findElement(By.cssSelector("#formName"));
         String forNameValue = formNameElement.getAttribute("placeholder");
 
         try {
@@ -82,11 +82,12 @@ public class CheckingConsultationRequestFormsTests extends BaseTest {
     @Test
     @Description("Проверка формы отправки заявки на консультацию.")
     @Step("Название поля 'Email' соответствует ожиданию!")
+    @Severity(SeverityLevel.NORMAL)
     public void testCheckingConsultationFormLabel2() throws InterruptedException {
         logger.info("Tests for CheckingConsultationFormLabel2(): started.");
-        WebElement wb_Text6Element = driver.findElement(By.cssSelector("#wb_Text6 span"));
+        WebElement wb_Text6Element = basePages.findElement(By.cssSelector("#wb_Text6 span"));
         scrollToElement(wb_Text6Element);
-        WebElement formLabel2Element = driver.findElement(By.cssSelector("#formLabel2"));
+        WebElement formLabel2Element = basePages.findElement(By.cssSelector("#formLabel2"));
 
         try {
             assertEquals("Email", formLabel2Element.getText(),
@@ -101,11 +102,12 @@ public class CheckingConsultationRequestFormsTests extends BaseTest {
     @Test
     @Description("Проверка формы отправки заявки на консультацию.")
     @Step("Значение поля 'placeholder' для поля ввода 'Email' соответствует ожиданию!")
+    @Severity(SeverityLevel.NORMAL)
     public void testCheckingConsultationFormLabel3() throws InterruptedException {
         logger.info("Tests for CheckingConsultationFormLabel3(): started.");
-        WebElement wb_Text6Element = driver.findElement(By.cssSelector("#wb_Text6 span"));
+        WebElement wb_Text6Element = basePages.findElement(By.cssSelector("#wb_Text6 span"));
         scrollToElement(wb_Text6Element);
-        WebElement formEmailElement = driver.findElement(By.cssSelector("#formEmail"));
+        WebElement formEmailElement = basePages.findElement(By.cssSelector("#formEmail"));
         String forEmailValue = formEmailElement.getAttribute("placeholder");
 
         try {
@@ -116,19 +118,17 @@ public class CheckingConsultationRequestFormsTests extends BaseTest {
             logger.error("Тест 'CheckingConsultationForNameValue()' завершился с ошибкой: ", e);
             throw e;
         }
-        System.out.println("Tests for CheckingConsultationFormLabel3Element (): " +
-                "completed successfully!");
-
     }
 
     @Test
     @Description("Проверка формы отправки заявки на консультацию.")
     @Step("Название поля 'Сообщение' соответствует ожиданию!")
+    @Severity(SeverityLevel.NORMAL)
     public void testCheckingConsultationFormLabel4() throws InterruptedException {
         logger.info("Tests for CheckingConsultationFormLabel4(): started.");
-        WebElement wb_Text6Element = driver.findElement(By.cssSelector("#wb_Text6 span"));
+        WebElement wb_Text6Element = basePages.findElement(By.cssSelector("#wb_Text6 span"));
         scrollToElement(wb_Text6Element);
-        WebElement formLabel4Element = driver.findElement(By.cssSelector("#formLabel4"));
+        WebElement formLabel4Element = basePages.findElement(By.cssSelector("#formLabel4"));
 
         try {
             assertEquals("Сообщение", formLabel4Element.getText(),
@@ -142,11 +142,12 @@ public class CheckingConsultationRequestFormsTests extends BaseTest {
     @Test
     @Description("Проверка формы отправки заявки на консультацию.")
     @Step("Значение поля 'placeholder' для поля ввода 'Сообщение' соответствует ожиданию!")
+    @Severity(SeverityLevel.NORMAL)
     public void testCheckingConsultationFormMessageElement() throws InterruptedException {
         logger.info("Tests for CheckingConsultationFormMessageElement(): started.");
-        WebElement wb_Text6Element = driver.findElement(By.cssSelector("#wb_Text6 span"));
+        WebElement wb_Text6Element = basePages.findElement(By.cssSelector("#wb_Text6 span"));
         scrollToElement(wb_Text6Element);
-        WebElement formMessageElement = driver.findElement(By.cssSelector("#formMessage"));
+        WebElement formMessageElement = basePages.findElement(By.cssSelector("#formMessage"));
         String forMessageValue = formMessageElement.getAttribute("placeholder");
 
         try {
@@ -155,7 +156,7 @@ public class CheckingConsultationRequestFormsTests extends BaseTest {
             logger.info("Tests for CheckingConsultationFormMessageElement() completed successfully!");
         }catch (Exception e){
             logger.error("Тест 'CheckingConsultationFormMessageElement()' завершился с ошибкой: ", e);
+            throw e;
         }
-        System.out.println("Tests for CheckingConsultationFormMessageElement(): completed successfully!");
     }
 }

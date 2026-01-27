@@ -1,9 +1,6 @@
 package org.example.mainPage;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -26,6 +23,7 @@ public class CheckingDisplayPageElementsTests extends BaseTest {
     @Test
     @Description("Проверка значения title целевой страницы.")
     @Step("Открыта целевая страница.")
+    @Severity(SeverityLevel.CRITICAL)
     public void checkTitle() throws InterruptedException {
         logger.info("Starting test 'checkTitle'.");
         String title = driver.getTitle();
@@ -41,10 +39,11 @@ public class CheckingDisplayPageElementsTests extends BaseTest {
     @Test
     @Description("Проверка отображения логотипа.")
     @Step("Логотип соответствует ожиданию.")
+    @Severity(SeverityLevel.MINOR)
     public void logoSearch() throws InterruptedException {
         logger.info("Starting test 'logoSearch'.");
 
-        WebElement logo = driver.findElement(By.id("Picture2"));
+        WebElement logo = basePages.findElement(By.id("Picture2"));
         String actualSrcValue = logo.getAttribute("src");
 
         try {
@@ -60,9 +59,10 @@ public class CheckingDisplayPageElementsTests extends BaseTest {
     @Test
     @Description("Проверка отображения раздела 'Публикации' на главной странице.")
     @Step("Раздел 'Публикации' отображается на странице.")
+    @Severity(SeverityLevel.CRITICAL)
     public void checkingPublicationSection() throws InterruptedException{
         logger.info("Starting test 'checkingPublicationSection'.");
-        WebElement publication = driver.findElement(By.cssSelector("#testimonialsHeading"));
+        WebElement publication = basePages.findElement(By.cssSelector("#testimonialsHeading"));
         scrollToElement(publication);
         boolean isVisible =  publication.isDisplayed();
 

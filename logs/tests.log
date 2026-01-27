@@ -1,4 +1,203 @@
-16:57:03.706 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
-16:57:03.731 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
-16:57:05.146 [main] INFO  o.e.m.CheckingSubmitRequestFormTests - Starting test 'checkingEmptyConsentCheckbox'.
-16:57:05.275 [main] INFO  o.e.m.CheckingSubmitRequestFormTests - Tests for checkingEmptyConsentCheckbox(): completed successfully!
+23:01:48.963 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:01:48.974 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:01:50.497 [main] INFO  o.e.a.CheckDisplayElementsPageAboutMeTests - Starting test 'CheckingHeaderContentAboutMePage()'!
+23:01:50.533 [main] INFO  o.e.a.CheckDisplayElementsPageAboutMeTests - Тест 'CheckingHeaderContentAboutMePage()' завершился успешно.
+23:01:50.718 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:01:50.721 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:01:52.113 [main] INFO  o.e.a.CheckDisplayElementsPageAboutMeTests - Starting test 'CheckTitleAboutMePage()'!
+23:01:52.123 [main] INFO  o.e.a.CheckDisplayElementsPageAboutMeTests - Тест 'CheckTitleAboutMePage()' завершился успешно.
+23:01:52.229 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:01:52.237 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:01:53.677 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Starting test 'CheckingAllPublicationsPoint'.
+23:01:54.027 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Тест 'CheckingAllPublicationsPoint()' завершился успешно.
+23:01:54.135 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:01:54.140 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:01:55.529 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Starting test 'CheckingEducationPoint'.
+23:01:55.754 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Тест 'CheckingEducationPoint()' завершился успешно.
+23:01:55.867 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:01:55.872 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:01:57.278 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Starting test 'CheckingContactsPoint'.
+23:01:57.882 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Тест 'CheckingContactsPoint()' завершился успешно.
+23:01:57.992 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:01:57.996 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:01:59.293 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Starting test 'CheckingSubmitApplicationPoint()'.
+23:01:59.797 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Тест 'CheckingSubmitApplicationPoint()' завершился успешно.
+23:01:59.916 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:01:59.920 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:01.728 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Starting test 'CheckingMainPoint'.
+23:02:02.442 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:02.447 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:03.640 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Starting test 'CheckingAboutMePoint'.
+23:02:03.740 [main] INFO  o.e.a.CheckNavigationAboutmeTests - Тест 'CheckingAboutMePoint()' завершился успешно.
+23:02:03.853 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:03.859 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:05.110 [main] INFO  o.e.e.CheckingEducationPageTests - Starting test 'checkTitle()'.
+23:02:05.123 [main] INFO  o.e.e.CheckingEducationPageTests - Tests for checkTitle(): completed successfully!
+23:02:05.219 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:05.222 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:06.428 [main] INFO  o.e.e.CheckingEducationPageTests - Starting test 'checkingPageTitle()'.
+23:02:06.458 [main] INFO  o.e.e.CheckingEducationPageTests - Tests for checkingPageTitle(): completed successfully!
+23:02:06.569 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:06.573 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:07.809 [main] INFO  o.e.e.CheckingNavigationElementsEducationPageTests - Starting test 'checkSecondPoint()'.
+23:02:08.032 [main] INFO  o.e.e.CheckingNavigationElementsEducationPageTests - Tests for checkSecondPoint(): completed successfully!
+23:02:08.143 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:08.146 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:09.431 [main] INFO  o.e.e.CheckingNavigationElementsEducationPageTests - Starting test 'checkMainPoint()'.
+23:02:09.904 [main] INFO  o.e.e.CheckingNavigationElementsEducationPageTests - Tests for checkMainPoint(): completed successfully!
+23:02:10.064 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:10.069 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:11.307 [main] INFO  o.e.e.CheckingNavigationElementsEducationPageTests - Starting test 'checkSixPoint()'.
+23:02:11.840 [main] INFO  o.e.e.CheckingNavigationElementsEducationPageTests - Tests for checkSixPoint(): completed successfully!
+23:02:11.952 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:11.955 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:13.460 [main] INFO  o.e.e.CheckingNavigationElementsEducationPageTests - Starting test 'checkFourthPoint()'.
+23:02:13.731 [main] INFO  o.e.e.CheckingNavigationElementsEducationPageTests - Tests for checkFourthPoint(): completed successfully!
+23:02:13.843 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:13.846 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:14.997 [main] INFO  o.e.e.CheckingNavigationElementsEducationPageTests - Starting test 'checkFifthPoint()'.
+23:02:15.475 [main] INFO  o.e.e.CheckingNavigationElementsEducationPageTests - Tests for checkFifthPoint(): completed successfully!
+23:02:15.588 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:15.592 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:16.788 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationForNameValue(): started.
+23:02:16.839 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationForNameValue(): completed successfully!
+23:02:16.966 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:16.969 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:18.207 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationFormLabel2(): started.
+23:02:18.242 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationFormLabel2(): completed successfully!
+23:02:18.410 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:18.415 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:19.676 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationFormLabel3(): started.
+23:02:19.730 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationFormLabel3(): completed successfully!
+23:02:19.858 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:19.862 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:21.101 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationFormLabel4(): started.
+23:02:21.149 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationFormLabel4() completed successfully!
+23:02:21.325 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:21.328 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:22.569 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationForms(): started.
+23:02:22.592 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationForms(): completed successfully!
+23:02:22.708 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:22.711 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:23.952 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationFormMessageElement(): started.
+23:02:24.005 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationFormMessageElement() completed successfully!
+23:02:24.135 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:24.139 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:25.416 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationFormLabel(): started.
+23:02:25.487 [main] INFO  o.e.m.CheckingConsultationRequestFormsTests - Tests for CheckingConsultationFormLabel(): completed successfully!
+23:02:25.633 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:25.636 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:26.831 [main] INFO  o.e.m.CheckingContactFormsTests - Starting test 'checkingCFLocation()'.
+23:02:26.874 [main] INFO  o.e.m.CheckingContactFormsTests - Tests for 'checkingCFLocation()': completed successfully!
+23:02:27.009 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:27.013 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:28.301 [main] INFO  o.e.m.CheckingContactFormsTests - Starting test 'checkingCFCallMe()'.
+23:02:28.348 [main] INFO  o.e.m.CheckingContactFormsTests - Tests for 'checkingCFCallMe()': completed successfully!
+23:02:28.479 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:28.482 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:29.699 [main] INFO  o.e.m.CheckingContactFormsTests - Starting test 'checkingCFMailElement()'.
+23:02:29.734 [main] INFO  o.e.m.CheckingContactFormsTests - Tests for 'checkingCFMailElement()': completed successfully!
+23:02:29.909 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:29.911 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:31.099 [main] INFO  o.e.mainPage.CheckingDataUploadTests - Starting test 'checkingPublicationBlockArticleLink'.
+23:02:31.139 [main] INFO  o.e.mainPage.CheckingDataUploadTests - Tests for checkingPublicationBlockArticleLink(): completed successfully!
+23:02:31.296 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:31.299 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:32.487 [main] INFO  o.e.mainPage.CheckingDataUploadTests - Starting test 'checkingPublicationBlockDatePublished'.
+23:02:32.553 [main] INFO  o.e.mainPage.CheckingDataUploadTests - Tests for checkingPublicationBlockDatePublished(): completed successfully!
+23:02:32.672 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:32.675 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:33.920 [main] INFO  o.e.mainPage.CheckingDataUploadTests - Starting test 'checkingPublicationBlockBlogTextSpan'.
+23:02:33.964 [main] INFO  o.e.mainPage.CheckingDataUploadTests - Tests for checkingPublicationBlockBlogTextSpan(): completed successfully!
+23:02:34.089 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:34.092 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:35.283 [main] INFO  o.e.m.CheckingDisplayPageElementsTests - Starting test 'logoSearch'.
+23:02:35.306 [main] INFO  o.e.m.CheckingDisplayPageElementsTests - Tests for logoSearch(): completed successfully!
+23:02:35.411 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:35.415 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:36.661 [main] INFO  o.e.m.CheckingDisplayPageElementsTests - Starting test 'checkTitle'.
+23:02:36.668 [main] INFO  o.e.m.CheckingDisplayPageElementsTests - Tests for checkTitle(): completed successfully!
+23:02:36.797 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:36.801 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:38.026 [main] INFO  o.e.m.CheckingDisplayPageElementsTests - Starting test 'checkingPublicationSection'.
+23:02:38.058 [main] INFO  o.e.m.CheckingDisplayPageElementsTests - Tests for checkingPublicationSection(): completed successfully!
+23:02:38.199 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:38.203 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:39.509 [main] INFO  o.e.m.CheckingSubmitRequestFormTests - Starting test 'checkingEmptyConsentCheckbox'.
+23:02:39.621 [main] INFO  o.e.m.CheckingSubmitRequestFormTests - Tests for checkingEmptyConsentCheckbox(): completed successfully!
+23:02:39.767 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:39.770 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:41.025 [main] INFO  o.e.m.CheckingSubmitRequestFormTests - Starting test 'checkRequestConsultation'.
+23:02:41.197 [main] INFO  o.e.m.CheckingSubmitRequestFormTests - Tests for checkRequestConsultation(): completed successfully!
+23:02:41.402 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:41.406 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:42.610 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'chekFifthElementMenu'.
+23:02:42.805 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for chekFifthElementMenu(): completed successfully!
+23:02:42.948 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:42.951 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:44.200 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'checkingMenuMainPageThirdElementMenu'.
+23:02:44.439 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for checkingMenuMainPageThirdElementMenu(): completed successfully!
+23:02:44.579 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:44.582 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:45.816 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'chekSixthElementMenu'.
+23:02:46.014 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for chekSixthElementMenu(): completed successfully!
+23:02:46.143 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:46.146 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:47.413 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'checkingMenuMainPageSecondElementMenu'.
+23:02:47.637 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for checkingMenuMainPageSecondElementMenu(): completed successfully!
+23:02:47.798 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:47.801 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:49.099 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'chekButtonLearnMoreAboutFirstSection'.
+23:02:49.288 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for chekButtonLearnMoreAboutFirstSection(): completed successfully!
+23:02:49.473 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:49.477 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:50.764 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'chekButtonLearnMorePC'.
+23:02:50.961 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for chekButtonLearnMorePC(): completed successfully!
+23:02:51.112 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:51.115 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:52.287 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'checkButtonUp'.
+23:02:52.402 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for checkButtonUp(): completed successfully!
+23:02:52.596 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:52.599 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:53.848 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'chekButtonLearnMoreCCG()'.
+23:02:54.061 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for chekButtonLearnMoreCCG()(): completed successfully!
+23:02:54.213 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:54.216 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:55.482 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'chekButtonLearnMoreCoaching'.
+23:02:55.703 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for chekButtonLearnMoreCoaching(): completed successfully!
+23:02:55.857 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:55.861 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:57.145 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'checkingMenuMainPageFourthElementMenu'.
+23:02:57.356 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for checkingMenuMainPageFourthElementMenu(): completed successfully!
+23:02:57.547 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:57.556 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:02:59.027 [main] INFO  o.e.m.CheckNavigationMainTests - Starting test 'checkingMenuMainPageFirstPointMenu'.
+23:02:59.046 [main] INFO  o.e.m.CheckNavigationMainTests - Tests for checkingMenuMainPageFirstPointMenu(): completed successfully!
+23:02:59.181 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:02:59.184 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:03:00.287 [main] INFO  o.e.p.CheckingNavigationElementsPublicationPageTests - Starting test 'checkFourthPoint()'.
+23:03:00.392 [main] INFO  o.e.p.CheckingNavigationElementsPublicationPageTests - Tests for checkFourthPoint(): completed successfully!
+23:03:00.515 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:03:00.522 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:03:01.719 [main] INFO  o.e.p.CheckingNavigationElementsPublicationPageTests - Starting test 'checkSixPoint()'.
+23:03:02.147 [main] INFO  o.e.p.CheckingNavigationElementsPublicationPageTests - Tests for checkSixPoint(): completed successfully!
+23:03:02.254 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:03:02.257 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:03:03.439 [main] INFO  o.e.p.CheckingNavigationElementsPublicationPageTests - Starting test 'checkSecondPoint()'.
+23:03:03.638 [main] INFO  o.e.p.CheckingNavigationElementsPublicationPageTests - Tests for checkSecondPoint(): completed successfully!
+23:03:03.738 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:03:03.742 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:03:04.912 [main] INFO  o.e.p.CheckingNavigationElementsPublicationPageTests - Starting test 'checkMainPoint()'.
+23:03:05.299 [main] INFO  o.e.p.CheckingNavigationElementsPublicationPageTests - Tests for checkMainPoint(): completed successfully!
+23:03:05.425 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:03:05.429 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:03:06.600 [main] INFO  o.e.p.CheckingNavigationElementsPublicationPageTests - Starting test 'checkFifthPoint()'.
+23:03:07.458 [main] INFO  o.e.p.CheckingNavigationElementsPublicationPageTests - Tests for checkFifthPoint(): completed successfully!
+23:03:07.557 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:03:07.560 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:03:08.806 [main] INFO  o.e.p.CheckingPublicationsPageTests - Starting test 'checkTitle()'.
+23:03:08.814 [main] INFO  o.e.p.CheckingPublicationsPageTests - Tests for checkTitle(): completed successfully!
+23:03:08.929 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.96 (resolved driver for Chrome 144)
+23:03:08.932 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\144.0.7559.96\chromedriver.exe
+23:03:10.110 [main] INFO  o.e.p.CheckingPublicationsPageTests - Starting test 'checkingPageTitle()'.
+23:03:10.144 [main] INFO  o.e.p.CheckingPublicationsPageTests - Tests for checkingPageTitle(): completed successfully!

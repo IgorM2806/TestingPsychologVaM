@@ -1,9 +1,6 @@
 package org.example.aboutMe;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -24,6 +21,7 @@ public class CheckDisplayElementsPageAboutMeTests extends BaseTest {
     @Test
     @Description("Проверка отображения элементов на странице 'Обо мне'.")
     @Step("Значение title страницы соответствует ожиданию.")
+    @Severity(SeverityLevel.CRITICAL)
     public void testCheckTitleAboutMePage() {
         logger.info("Starting test 'CheckTitleAboutMePage()'!");
         String title = driver.getTitle();
@@ -39,9 +37,10 @@ public class CheckDisplayElementsPageAboutMeTests extends BaseTest {
     @Test
     @Description("Проверка отображения элементов на странице 'Обо мне'.")
     @Step("Содержание заголовка страницы не соответствует ожиданию.")
+    @Severity(SeverityLevel.NORMAL)
     public void testCheckingHeaderContentAboutMePage() {
         logger.info("Starting test 'CheckingHeaderContentAboutMePage()'!");
-        String header = driver.findElement(By.id("Heading1")).getText();
+        String header =basePages.findElement(By.id("Heading1")).getText();
 
         try {
             assertEquals("Влада Магнич – психолог, коуч, карьерный консультант и профориентолог",

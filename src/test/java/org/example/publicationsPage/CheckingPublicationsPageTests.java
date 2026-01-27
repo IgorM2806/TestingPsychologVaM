@@ -1,6 +1,8 @@
 package org.example.publicationsPage;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import org.example.BaseTest;
 import org.junit.jupiter.api.Test;
@@ -21,6 +23,7 @@ public class CheckingPublicationsPageTests extends BaseTest {
     @Test
     @Description("Проверка отображения основных элементов страницы 'Публикации'.")
     @Step("Значение title страницы соответствует ожиданию.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkTitle() throws InterruptedException {
         logger.info("Starting test 'checkTitle()'.");
         String title = driver.getTitle();
@@ -38,9 +41,10 @@ public class CheckingPublicationsPageTests extends BaseTest {
     @Test
     @Description("Проверка отображения основных элементов страницы.")
     @Step("Содержание заголовка  страницы соответствует ожиданию.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingPageTitle() throws InterruptedException {
         logger.info("Starting test 'checkingPageTitle()'.");
-        WebElement heading1 =  driver.findElement(By.id("wb_DropList1"));
+        WebElement heading1 = basePages.findElement(By.id("wb_DropList1"));
 
         try {
             assertEquals("Все публикации", heading1.getText(),
