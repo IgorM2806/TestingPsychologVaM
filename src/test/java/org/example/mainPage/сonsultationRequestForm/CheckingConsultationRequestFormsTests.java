@@ -1,4 +1,4 @@
-package org.example.mainPage;
+package org.example.mainPage.сonsultationRequestForm;
 
 import io.qameta.allure.*;
 import org.example.BaseTest;

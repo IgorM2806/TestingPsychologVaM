@@ -1,4 +1,4 @@
-package org.example.mainPage;
+package org.example.mainPage.сonsultationRequestForm;
 
 import io.qameta.allure.*;
 import org.example.BaseTest;
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 @Epic("Тестирование страницы 'Главная'")
-@Feature("Проверка флормы 'Оставить заявку'")
+@Feature("Проверка отображения формы 'Оставить заявку'")
 public class CheckingSubmitRequestFormTests extends BaseTest {
 
     public CheckingSubmitRequestFormTests(){
@@ -27,7 +27,7 @@ public class CheckingSubmitRequestFormTests extends BaseTest {
     @Step("При установке чекбокса не отображается alert с запросом" +
             " подтвердить согласие на обработку персональных данных.")
     @Severity(SeverityLevel.NORMAL)
-    public void checkRequestConsultation()  throws InterruptedException {
+    public void testCheckRequestConsultation()  throws InterruptedException {
         logger.info("Starting test 'checkRequestConsultation'.");
         WebElement requestConsultation = basePages.findElement(By.cssSelector("#LayoutGrid3 .col-2"));
         scrollToElement(requestConsultation);
@@ -50,7 +50,7 @@ public class CheckingSubmitRequestFormTests extends BaseTest {
     @Step("ПРИ ОТСУТСТВИИ установки чекбокса отображается предупреждение (alert)," +
             " запрашивающее подтверждение согласия на обработку персональных данных.")
     @Severity(SeverityLevel.NORMAL)
-    public void checkingEmptyConsentCheckbox()  throws InterruptedException {
+    public void testCheckingEmptyConsentCheckbox()  throws InterruptedException {
         logger.info("Starting test 'checkingEmptyConsentCheckbox'.");
         WebElement requestConsultation = basePages.findElement(By.cssSelector("#LayoutGrid3 .col-2"));
         scrollToElement(requestConsultation);

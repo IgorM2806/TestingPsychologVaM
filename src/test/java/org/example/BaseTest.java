@@ -3,10 +3,7 @@ package org.example;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -50,5 +47,31 @@ public abstract class BaseTest {
     protected void clickingElement(By locator) {
         WebElement element = driver.findElement(locator);
         element.click();
+    }
+
+    protected void insertingValueIntoFieldName(By locator, String value) {
+        WebElement element = waitForElement(locator, 3);
+        element.sendKeys(value);
+    }
+
+    protected void insertingValueIntoFieldEmail(By locator, String value) {
+        WebElement element = waitForElement(locator, 3);
+        element.sendKeys(value);
+    }
+
+    protected void insertingValueIntoFieldMessage(By locator, String value) {
+        WebElement element = waitForElement(locator, 3);
+        element.sendKeys(value);
+    }
+
+    protected void clickingValueIntoFieldCheckbox(By locator) {
+        WebElement element = waitForElement(locator, 3);
+        element.click();
+    }
+
+    protected String getTextAlert() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        return  alert.getText();
     }
 }
