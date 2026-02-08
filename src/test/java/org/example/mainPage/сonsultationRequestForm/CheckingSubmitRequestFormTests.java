@@ -2,10 +2,9 @@ package org.example.mainPage.сonsultationRequestForm;
 
 import io.qameta.allure.*;
 import org.example.BaseTest;
+import org.example.mainPage.MainPageConsultationRequestFormsLocators;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @Epic("Тестирование страницы 'Главная'")
 @Feature("Проверка отображения формы 'Оставить заявку'")
 public class CheckingSubmitRequestFormTests extends BaseTest {
-
+    MainPageConsultationRequestFormsLocators mainPageConsultationRequestFormsLocators;
     public CheckingSubmitRequestFormTests(){
         super("https://psycholog-vam.ru");
     }
@@ -24,19 +23,16 @@ public class CheckingSubmitRequestFormTests extends BaseTest {
 
     @Test
     @Description("Проверка чекбокса в разделе 'Оставить заявку'.")
-    @Step("При установке чекбокса не отображается alert с запросом" +
-            " подтвердить согласие на обработку персональных данных.")
     @Severity(SeverityLevel.NORMAL)
     public void testCheckRequestConsultation()  throws InterruptedException {
         logger.info("Starting test 'checkRequestConsultation'.");
-        WebElement requestConsultation = basePages.findElement(By.cssSelector("#LayoutGrid3 .col-2"));
-        scrollToElement(requestConsultation);
-        clickingElement(By.cssSelector("#privacyConsent"));
-        clickingElement(By.cssSelector("#formButton"));
-        Alert alert = driver.switchTo().alert();
-        String alertText = alert.getText();
-
         try {
+            scrollToElement(mainPageConsultationRequestFormsLocators.requestConsultationLocator);
+            clickingElement(mainPageConsultationRequestFormsLocators.privacyConsentLocator);
+            clickingElement(mainPageConsultationRequestFormsLocators.sendButtonLocator);
+            Alert alert = driver.switchTo().alert();
+            String alertText = alert.getText();
+
             assertNotNull(alertText, "Alert не отображается на экране!");
             logger.info("Tests for checkRequestConsultation(): completed successfully!");
         }catch (AssertionError e){
@@ -47,20 +43,16 @@ public class CheckingSubmitRequestFormTests extends BaseTest {
 
     @Test
     @Description("Проверка чекбокса в разделе 'Оставить заявку'.")
-    @Step("ПРИ ОТСУТСТВИИ установки чекбокса отображается предупреждение (alert)," +
-            " запрашивающее подтверждение согласия на обработку персональных данных.")
     @Severity(SeverityLevel.NORMAL)
     public void testCheckingEmptyConsentCheckbox()  throws InterruptedException {
         logger.info("Starting test 'checkingEmptyConsentCheckbox'.");
-        WebElement requestConsultation = basePages.findElement(By.cssSelector("#LayoutGrid3 .col-2"));
-        scrollToElement(requestConsultation);
-        clickingElement(By.cssSelector("#formButton"));
-        String alertText = driver.switchTo().alert().getText();
-        System.out.println("alert: " + alertText);
-
         try {
+            scrollToElement(mainPageConsultationRequestFormsLocators.requestConsultationLocator);
+            clickingElement(mainPageConsultationRequestFormsLocators.sendButtonLocator);
+            String alertText = driver.switchTo().alert().getText();
+
             assertEquals("Необходимо согласиться с условиями конфиденциальности.", alertText,
-                    "Отсутствует Аллерт - 'Необходимо согласиться с условиями конфиденциальности'.");
+                    "Отсутствует alert - 'Необходимо согласиться с условиями конфиденциальности'.");
             logger.info("Tests for checkingEmptyConsentCheckbox(): completed successfully!");
         }catch (AssertionError e){
             logger.error("Ошибка в тесте 'checkingEmptyConsentCheckbox': ", e);

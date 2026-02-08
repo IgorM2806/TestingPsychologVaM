@@ -12,6 +12,7 @@ import java.time.Duration;
 
 public abstract class BaseTest {
     protected WebDriver driver;
+    protected WebDriverWait wait;
     private String baseUrl;
     protected BasePages basePages;
 
@@ -23,6 +24,7 @@ public abstract class BaseTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get(baseUrl);
         driver.manage().window().maximize();
         basePages = new BasePages(driver);
@@ -30,8 +32,8 @@ public abstract class BaseTest {
 
     @AfterEach
     public void tearDown() {
-        if(driver != null){
-            driver.quit();           // Безопасное завершение драйвера
+        if (driver != null) {
+            driver.quit();
         }
     }
 
@@ -40,7 +42,8 @@ public abstract class BaseTest {
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    protected void scrollToElement(WebElement element) {
+    protected void scrollToElement(By locator) {
+        WebElement element = waitForElement(locator, 5);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
@@ -49,29 +52,17 @@ public abstract class BaseTest {
         element.click();
     }
 
-    protected void insertingValueIntoFieldName(By locator, String value) {
-        WebElement element = waitForElement(locator, 3);
-        element.sendKeys(value);
-    }
-
-    protected void insertingValueIntoFieldEmail(By locator, String value) {
-        WebElement element = waitForElement(locator, 3);
-        element.sendKeys(value);
-    }
-
-    protected void insertingValueIntoFieldMessage(By locator, String value) {
-        WebElement element = waitForElement(locator, 3);
-        element.sendKeys(value);
-    }
-
-    protected void clickingValueIntoFieldCheckbox(By locator) {
-        WebElement element = waitForElement(locator, 3);
-        element.click();
-    }
-
     protected String getTextAlert() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        return  alert.getText();
+        return alert.getText();
     }
+
+    protected void waitForPageLoad() {
+        waitForPageLoad();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until((WebDriver d) -> {
+            return ((JavascriptExecutor) d).executeScript("return document.readyState").equals("complete");
+        });
+    }
+
 }
