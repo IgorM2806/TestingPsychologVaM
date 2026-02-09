@@ -54,6 +54,7 @@ public class CheckingEducationPageTests extends BaseTest {
             throw e;
         }catch (TimeoutException te){
             logger.error("Превышен лимит ожидания! ", te);
+            throw te;
         }
     }
 }

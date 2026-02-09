@@ -30,6 +30,7 @@ public class CheckDisplayElementsPageAboutMeTests extends BaseTest {
             logger.info("Тест 'CheckTitleAboutMePage()' завершился успешно.");
         }catch (Exception e) {
             logger.error("Тест 'CheckTitleAboutMePage()' завершился с ошибкой: ", e);
+            throw e;
         }
     }
 
@@ -46,6 +47,7 @@ public class CheckDisplayElementsPageAboutMeTests extends BaseTest {
             logger.info("Тест 'CheckingHeaderContentAboutMePage()' завершился успешно.");
         }catch (Exception e) {
             logger.error("Тест 'CheckingHeaderContentAboutMePage()' завершился с ошибкой: ", e);
+            throw e;
         }
     }
 }
