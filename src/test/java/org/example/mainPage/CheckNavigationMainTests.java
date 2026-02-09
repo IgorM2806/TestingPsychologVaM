@@ -1,19 +1,16 @@
 package org.example.mainPage;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Epic("Тестирование страницы 'Главная'")
 @Feature("Проверка переходов по элементам навигации страницы.")
@@ -22,213 +19,204 @@ public class CheckNavigationMainTests extends BaseTest {
     public CheckNavigationMainTests(){
         super("https://psycholog-vam.ru/");
     }
+    NavigationMainLocator navigationMainLocator = new NavigationMainLocator();
 
     private static final Logger logger = LoggerFactory.getLogger(CheckNavigationMainTests.class);
 
     @Test
-    @Description("Проверка переходов из основного меню страницы.")
-    @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Главная'")
+    @Description("Проверка перехода по пункту 'Главная' из основного меню страницы.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageFirstPointMenu()  throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageFirstPointMenu'.");
-        WebElement firstPointMenu = driver.findElement(By.cssSelector("#menu-list > li:first-child > a"));
-        String actualHrefValue = firstPointMenu.getAttribute("href");
-
         try {
-            assertEquals("Значение атрибута href отличается от ожидаемого!",
-                    actualHrefValue, "https://psycholog-vam.ru/index.php");
+            WebElement firstPointMenu = basePages.findElement(navigationMainLocator.firstPointMenuLocator);
+            String actualHrefValue = firstPointMenu.getAttribute("href");
+
+            assertEquals("https://psycholog-vam.ru/index.php",
+                    actualHrefValue, "Значение атрибута href отличается от ожидаемого!");
             logger.info("Tests for checkingMenuMainPageFirstPointMenu(): completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Ошибка в тесте 'checkTitle': ", e);
             throw e;
         }
     }
 
     @Test
-    @Description("Проверка переходов из основного меню страницы.")
-    @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Обо мне'")
+    @Description("Проверка перехода по пункту 'Обо мне' из основного меню страницы.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageSecondElementMenu() throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageSecondElementMenu'.");
-        WebElement secondElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(2) > a"));
-        secondElementMenu.click();
-        String title = driver.getTitle();
-
         try {
-            assertEquals("При переходе значение title открытой страницы не соответсвует ожиданию!",
-                    title, "About me");
+            clickingElement(navigationMainLocator.secondElementMenuLocator);
+            String title = driver.getTitle();
+
+            assertEquals("About me",
+                    title, "При переходе значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for checkingMenuMainPageSecondElementMenu(): completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Ошибка в тесте 'checkTitle': ", e);
             throw e;
         }
     }
 
     @Test
-    @Description("Проверка переходов из основного меню страницы.")
-    @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Образование'")
+    @Description("Проверка перехода по пункту 'Образование' из основного меню страницы.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageThirdElementMenu() throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageThirdElementMenu'.");
-        WebElement thirdElementMenu =  driver.findElement(By.cssSelector("#menu-list > li:nth-child(3) > a"));
-        thirdElementMenu.click();
-        String title2 = driver.getTitle();
-
         try {
-            assertEquals("При переходе значение title открытой страницы не соответствует ожиданию!", title2,
-                    "Education");
+            clickingElement(navigationMainLocator.thirdElementMenuLocator);
+            String title2 = driver.getTitle();
+
+            assertEquals("Education", title2,
+                    "При переходе значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for checkingMenuMainPageThirdElementMenu(): completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Ошибка в тесте 'checkTitle': ", e);
             throw e;
         }
     }
 
     @Test
-    @Description("Проверка переходов из основного меню страницы.")
-    @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Публикации'")
+    @Description("Проверка перехода по пункту 'Публикации' из основного меню страницы.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageFourthElementMenu() throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageFourthElementMenu'.");
-        WebElement fourthElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(4) > a"));
-        fourthElementMenu.click();
-        String title3 = driver.getTitle();
-
         try {
-            assertEquals("При переходе значение title открытой страницы не соответствует ожиданию!", title3,
-                    "Все публикации");
+            clickingElement(navigationMainLocator.fourthElementMenuLocator);
+            String title3 = driver.getTitle();
+
+            assertEquals("Все публикации", title3,
+                    "При переходе значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for checkingMenuMainPageFourthElementMenu(): completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Ошибка в тесте 'checkTitle': ", e);
             throw e;
         }
     }
 
     @Test
-    @Description("Проверка переходов из основного меню Главной страницы.")
-    @Step("Целевая страница соответствует ожиданию при переходе по пункту 'Контакты'")
+    @Description("Проверка перехода по пункту 'Контакты' из основного меню Главной страницы.")
+    @Severity(SeverityLevel.NORMAL)
     public void chekFifthElementMenu() throws  InterruptedException {
         logger.info("Starting test 'chekFifthElementMenu'.");
-        WebElement fifthElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(5) > a"));
-        fifthElementMenu.click();
-
-        WebElement controlElement = waitForElement(By.cssSelector("#wb_Text8 span"), 5);
-        boolean isVisible = controlElement.isDisplayed();
-
         try {
-            assertTrue("Элемент Контакты не отображается на экране!", isVisible);
+            clickingElement(navigationMainLocator.fifthElementMenuLocator);
+            WebElement controlElement = waitForElement(navigationMainLocator.controlElementLocator, 5);
+            boolean isVisible = controlElement.isDisplayed();
+
+            assertTrue(isVisible, "Элемент Контакты не отображается на экране!");
             logger.info("Tests for chekFifthElementMenu(): completed successfully!");
-        }catch (AssertionError e){
-            logger.error("Ошибка в тесте 'chekFifthElementMenu': ",  e);
+        } catch (AssertionError e) {
+            logger.error("Ошибка в тесте 'chekFifthElementMenu': ", e);
             throw e;
         }
     }
     @Test
-    @Description("Проверка переходов из основного меню Главной страницы.")
-    @Step("Целевой раздел главной страницы отображается на экране,")
+    @Description("Проверка перехода по пункту 'Оставить заявку' из основного меню Главной страницы.")
+    @Severity(SeverityLevel.NORMAL)
     public void chekSixthElementMenu() throws InterruptedException {
         logger.info("Starting test 'chekSixthElementMenu'.");
-        WebElement sixthElementMenu = driver.findElement(By.cssSelector("#menu-list > li:nth-child(6) > a"));
-        sixthElementMenu.click();
-        WebElement controlElement = waitForElement(By.cssSelector("#wb_Text6 span"), 5);
-        boolean isVisible = controlElement.isDisplayed();
-
         try {
-            assertTrue("Элемент 'Заявка на консультацию' не отображается после перехода.", isVisible);
+            clickingElement(navigationMainLocator.sixthElementMenuLocator);
+            WebElement controlElement = waitForElement(navigationMainLocator.controlElementLocator, 5);
+            boolean isVisible = controlElement.isDisplayed();
+
+            assertTrue(isVisible, "Элемент 'Заявка на консультацию' не отображается после перехода.");
             logger.info("Tests for chekSixthElementMenu(): completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Ошибка в тесте 'chekSixthElementMenu': ", e);
             throw e;
         }
     }
 
     @Test
-    @Description("Проверка переходов по элементам навигации страницы.")
-    @Step("Целевая страница соответствует ожиданию при переходе по кнопке 'Узнать больше' первого раздела.")
+    @Description("Проверка перехода по кнопке 'Узнать больше' первого раздела.")
+    @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMoreAboutFirstSection() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMoreAboutFirstSection'.");
-        WebElement introButton = driver.findElement(By.cssSelector("#introButton"));
-        introButton.click();
-        String title = driver.getTitle();
-
         try {
-            assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "About me");
+            clickingElement(By.cssSelector("#introButton"));
+            String title = driver.getTitle();
+
+            assertEquals("About me", title, "Значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for chekButtonLearnMoreAboutFirstSection(): completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Ошибка в тесте 'chekButtonLearnMoreAboutFirstSection': ", e);
             throw e;
         }
     }
 
     @Test
-    @Description("Проверка переходов по элементам навигации страницы.")
-    @Step("Целевая страница соответствует ожиданию при переходе по кнопке 'Узнать больше'" +
-            " раздела 'Психологическое консультирование'.")
+    @Description("Проверка перехода по кнопке 'Узнать больше' раздела 'Психологическое консультирование'.")
+    @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMorePC() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMorePC'.");
-        WebElement whyButton = driver.findElement(By.cssSelector("#whyButton"));
-        scrollToElement(whyButton);
-        whyButton.click();
-        String title = driver.getTitle();
-
         try {
-            assertEquals("Значение title открытой страницы не соответствует ожиданию!",
-                    title, "Psychological counseling");
+            WebElement whyButton = basePages.findElement(navigationMainLocator.buttonLearnMoreLocator);
+            scrollToElement(navigationMainLocator.buttonLearnMoreLocator);
+            whyButton.click();
+            String title = driver.getTitle();
+
+            assertEquals("Psychological counseling",
+                    title, "Значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for chekButtonLearnMorePC(): completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Ошибка в тесте 'chekButtonLearnMorePC()': ", e);
         }
     }
 
     @Test
-    @Description("Проверка переходов по элементам навигации страницы.")
-    @Step("Целевая страница соответствует ожиданию при переходе по кнопке 'Узнать больше'" +
-            " раздела 'Карьерное консультирование и профориентация'.")
+    @Description("Проверка перехода по кнопке 'Узнать больше' раздела 'Карьерное консультирование и профориентация'.")
+    @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMoreCCG() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMoreCCG()'.");
-        WebElement button2 = driver.findElement(By.cssSelector("#Button2"));
-        scrollToElement(button2);
-        button2.click();
-        String title = driver.getTitle();
-
         try {
-            assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "KKP");
+            WebElement button2 = basePages.findElement(navigationMainLocator.buttonLearnMoreCCGLocator);
+            scrollToElement(navigationMainLocator.buttonLearnMoreCCGLocator);
+            button2.click();
+            String title = driver.getTitle();
+
+            assertEquals("KKP", title, "Значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for chekButtonLearnMoreCCG()(): completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Ошибка в тесте 'chekButtonLearnMoreCCG()()': ", e);
             throw e;
         }
     }
 
     @Test
-    @Description("Проверка переходов по элементам навигации страницы.")
-    @Step("Целевая страница соответствует ожиданию при переходе по кнопке 'Узнать больше'" +
-            " раздела 'Коучинг'.")
+    @Description("Проверка перехода по кнопке 'Узнать больше' раздела 'Коучинг'.")
+    @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMoreCoaching() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMoreCoaching'.");
-        WebElement howButton = driver.findElement(By.cssSelector("#howButton"));
-        scrollToElement(howButton);
-        howButton.click();
-        String title = driver.getTitle();
-
         try {
-            assertEquals("Значение title открытой страницы не соответствует ожиданию!", title, "Coaching");
+            WebElement howButton = basePages.findElement(navigationMainLocator.buttonLearnMoreCoachingLocator);
+            scrollToElement(navigationMainLocator.buttonLearnMoreCoachingLocator);
+            howButton.click();
+            String title = driver.getTitle();
+
+            assertEquals("Coaching", title, "Значение title открытой страницы не соответствует ожиданию!");
             logger.info("Tests for chekButtonLearnMoreCoaching(): completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Ошибка в тесте 'chekButtonLearnMoreCoaching': ", e);
             throw e;
         }
     }
 
     @Test
-    @Description("Проверка переходов по элементам навигации страницы.")
-    @Step("Переход выполнен успешно отображается логотип.")
+    @Description("Проверка перехода по кнопке 'Вверх' в нижней части страницы 'psycholog-vam.ru'.")
+    @Severity(SeverityLevel.NORMAL)
     public void checkButtonUp() throws InterruptedException {
         logger.info("Starting test 'checkButtonUp'.");
-        WebElement button1 = driver.findElement(By.cssSelector("#Button1"));
-        scrollToElement(button1);
-        button1.click();
-        WebElement logoElement = waitForElement(By.cssSelector("#RollOver1 a"), 5);
-        boolean logoIsVisible = logoElement.isDisplayed();
-
         try {
-            assertTrue("Скролл до header не выполнен!", logoIsVisible);
+            WebElement button1 = basePages.findElement(navigationMainLocator.buttonUpLocator);
+            scrollToElement(navigationMainLocator.buttonUpLocator);
+            button1.click();
+            WebElement logoElement = waitForElement(navigationMainLocator.logoElementLocator, 5);
+            boolean logoIsVisible = logoElement.isDisplayed();
+
+            assertTrue(logoIsVisible, "Скролл до header не выполнен!");
             logger.info("Tests for checkButtonUp(): completed successfully!");
         } catch (AssertionError e) {
             logger.error("Ошибка в тесте  'checkButtonUp': ", e);

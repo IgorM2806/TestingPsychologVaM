@@ -1,20 +1,17 @@
 package org.example.aboutMe;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
-import org.openqa.selenium.By;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Epic("Тестирование страницы 'Обо мне'.")
 @Feature("Проверка отображения элементов на странице 'Обо мне'.")
 public class CheckDisplayElementsPageAboutMeTests extends BaseTest {
+    AboutMeLocators aboutMeLocators;
     public static final Logger logger = LoggerFactory.getLogger(CheckDisplayElementsPageAboutMeTests.class);
 
     public CheckDisplayElementsPageAboutMeTests() {
@@ -23,32 +20,34 @@ public class CheckDisplayElementsPageAboutMeTests extends BaseTest {
 
     @Test
     @Description("Проверка отображения элементов на странице 'Обо мне'.")
-    @Step("Значение title страницы соответствует ожиданию.")
+    @Severity(SeverityLevel.CRITICAL)
     public void testCheckTitleAboutMePage() {
         logger.info("Starting test 'CheckTitleAboutMePage()'!");
         String title = driver.getTitle();
 
         try {
-            assertEquals("Значение title страницы не соответствует ожиданию!", title, "About me");
+            assertEquals("About me", title, "Значение title страницы не соответствует ожиданию!");
             logger.info("Тест 'CheckTitleAboutMePage()' завершился успешно.");
         }catch (Exception e) {
             logger.error("Тест 'CheckTitleAboutMePage()' завершился с ошибкой: ", e);
+            throw e;
         }
     }
 
     @Test
     @Description("Проверка отображения элементов на странице 'Обо мне'.")
-    @Step("Содержание заголовка страницы не соответствует ожиданию.")
+    @Severity(SeverityLevel.NORMAL)
     public void testCheckingHeaderContentAboutMePage() {
         logger.info("Starting test 'CheckingHeaderContentAboutMePage()'!");
-        String header = driver.findElement(By.id("Heading1")).getText();
 
         try {
-            assertEquals("Содержание заголовка не соответствует ожиданию!",
-                    header, "Влада Магнич – психолог, коуч, карьерный консультант и профориентолог");
+            String header =basePages.findElement(aboutMeLocators.headerLocator).getText();
+            assertEquals("Влада Магнич – психолог, коуч, карьерный консультант и профориентолог",
+                    header, "Содержание заголовка не соответствует ожиданию!");
             logger.info("Тест 'CheckingHeaderContentAboutMePage()' завершился успешно.");
         }catch (Exception e) {
             logger.error("Тест 'CheckingHeaderContentAboutMePage()' завершился с ошибкой: ", e);
+            throw e;
         }
     }
 }

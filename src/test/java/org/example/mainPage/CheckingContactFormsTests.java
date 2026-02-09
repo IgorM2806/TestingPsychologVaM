@@ -1,22 +1,21 @@
 package org.example.mainPage;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.example.BaseTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @Epic("Тестирование страницы 'Главная'")
 @Feature("Проверка отображения информации в разделе 'контакты'.")
 public class CheckingContactFormsTests extends BaseTest {
     private static final Logger logger = LoggerFactory.getLogger(CheckingContactFormsTests.class);
-
+    ContactFormsLocators contactFormsLocators;
     public CheckingContactFormsTests(){
         super("https://psycholog-vam.ru/");
     }
@@ -24,56 +23,63 @@ public class CheckingContactFormsTests extends BaseTest {
 
     @Test
     @Description("Проверка отображения информации в разделе 'контакты' на Главной странице.")
-    @Step("В разделе 'Email' отображается валидная информация.")
-    public void checkingCFMailElement() throws InterruptedException {
+    @Severity(SeverityLevel.CRITICAL)
+    public void checkingCFMailElement() throws TimeoutException {
         logger.info("Starting test 'checkingCFMailElement()'.");
-        WebElement wb_Text8 = driver.findElement(By.cssSelector("#wb_Text8"));
-        scrollToElement(wb_Text8);
-        WebElement mailelement =  driver.findElement(By.cssSelector("#formListView li:first-child p"));
-
+        String expectedElement = "vlada.magnich@yandex.ru";
         try {
-            assertEquals("vlada.magnich@yandex.ru", mailelement.getText(),
-                    "Значение в поле Mail не соответствует ожиданию!");
+            scrollToElement(contactFormsLocators.cFMailElementLocator);
+            WebElement mailElement = driver.findElement(contactFormsLocators.mailElementLocator);
+
+            assertEquals(expectedElement, mailElement.getText(),
+                    "Значение в поле Email не соответствует ожиданию!");
             logger.info("Tests for 'checkingCFMailElement()': completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Тест 'checkingCFMailElement()' завершился с ошибкой!", e);
             throw e;
+        }catch (TimeoutException te){
+            logger.error("Превышен лимит ожидания!", te);
         }
     }
 
     @Test
     @Description("Проверка отображения информации в разделе 'Контакты' на Главной странице.")
-    @Step("В разделе 'Позвони мне' отображается валидная информация! ")
-    public void checkingCFCallMe() throws InterruptedException {
+    @Severity(SeverityLevel.NORMAL)
+    public void checkingCFCallMe() throws TimeoutException {
         logger.info("Starting test 'checkingCFCallMe()'.");
-        WebElement wb_Text8 = driver.findElement(By.cssSelector("#wb_Text8"));
-        scrollToElement(wb_Text8);
-        WebElement callMe = driver.findElement(By.cssSelector("#formListView li:nth-child(2) p"));
+        String expectedText = "+7 903 344 89 75";
         try {
-            assertEquals("+7 903 344 89 75", callMe.getText(),
+            scrollToElement(contactFormsLocators.cFMailElementLocator);
+            WebElement callMe = basePages.findElement(contactFormsLocators.callMeLocator);
+
+            assertEquals(expectedText, callMe.getText(),
                     "Значение в поле 'Позвони мне' не соответствует ожиданию!");
             logger.info("Tests for 'checkingCFCallMe()': completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Тест 'checkingCFCallMe()' завершился с ошибкой!", e);
             throw e;
+        }catch (TimeoutException te){
+            logger.error("Превышен лимит ожидания! ", te);
         }
     }
 
     @Test
     @Description("Проверка отображения информации в разделе 'Контакты' на Главной странице.")
-    @Step("В разделе 'Расположение' отображается валидная информация!")
-    public void checkingCFLocation() throws InterruptedException {
+    @Severity(SeverityLevel.NORMAL)
+    public void checkingCFLocation() throws TimeoutException {
         logger.info("Starting test 'checkingCFLocation()'.");
-        WebElement wb_Text8 = driver.findElement(By.cssSelector("#wb_Text8"));
-        scrollToElement(wb_Text8);
-        WebElement location = driver.findElement(By.cssSelector("#formListView li:nth-child(3) p"));
-
+        String expectedText = "Город Казань";
         try {
-            assertEquals("Город Казань", location.getText(),
+            scrollToElement(contactFormsLocators.cFMailElementLocator);
+            WebElement location = basePages.findElement(contactFormsLocators.locationLocator);
+
+            assertEquals(expectedText, location.getText(),
                     "Значение в поле 'Расположение' не соответствует ожиданию!");
             logger.info("Tests for 'checkingCFLocation()': completed successfully!");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             logger.error("Тест 'checkingCFLocation()' завершился с ошибкой!", e);
+        }catch (TimeoutException te){
+            logger.error("превышен лимит ожидания! ", te);
         }
     }
 }
