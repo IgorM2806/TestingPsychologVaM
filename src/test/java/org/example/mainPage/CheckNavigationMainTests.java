@@ -24,7 +24,7 @@ public class CheckNavigationMainTests extends BaseTest {
     private static final Logger logger = LoggerFactory.getLogger(CheckNavigationMainTests.class);
 
     @Test
-    @Description("Проверка переходов из основного меню страницы.")
+    @Description("Проверка перехода по пункту 'Главная' из основного меню страницы.")
     @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageFirstPointMenu()  throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageFirstPointMenu'.");
@@ -42,7 +42,7 @@ public class CheckNavigationMainTests extends BaseTest {
     }
 
     @Test
-    @Description("Проверка переходов из основного меню страницы.")
+    @Description("Проверка перехода по пункту 'Обо мне' из основного меню страницы.")
     @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageSecondElementMenu() throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageSecondElementMenu'.");
@@ -60,7 +60,7 @@ public class CheckNavigationMainTests extends BaseTest {
     }
 
     @Test
-    @Description("Проверка переходов из основного меню страницы.")
+    @Description("Проверка перехода по пункту 'Образование' из основного меню страницы.")
     @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageThirdElementMenu() throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageThirdElementMenu'.");
@@ -78,7 +78,7 @@ public class CheckNavigationMainTests extends BaseTest {
     }
 
     @Test
-    @Description("Проверка переходов из основного меню страницы.")
+    @Description("Проверка перехода по пункту 'Публикации' из основного меню страницы.")
     @Severity(SeverityLevel.NORMAL)
     public void checkingMenuMainPageFourthElementMenu() throws InterruptedException {
         logger.info("Starting test 'checkingMenuMainPageFourthElementMenu'.");
@@ -96,7 +96,7 @@ public class CheckNavigationMainTests extends BaseTest {
     }
 
     @Test
-    @Description("Проверка переходов из основного меню Главной страницы.")
+    @Description("Проверка перехода по пункту 'Контакты' из основного меню Главной страницы.")
     @Severity(SeverityLevel.NORMAL)
     public void chekFifthElementMenu() throws  InterruptedException {
         logger.info("Starting test 'chekFifthElementMenu'.");
@@ -113,7 +113,7 @@ public class CheckNavigationMainTests extends BaseTest {
         }
     }
     @Test
-    @Description("Проверка переходов из основного меню Главной страницы.")
+    @Description("Проверка перехода по пункту 'Оставить заявку' из основного меню Главной страницы.")
     @Severity(SeverityLevel.NORMAL)
     public void chekSixthElementMenu() throws InterruptedException {
         logger.info("Starting test 'chekSixthElementMenu'.");
@@ -131,7 +131,7 @@ public class CheckNavigationMainTests extends BaseTest {
     }
 
     @Test
-    @Description("Проверка переходов по элементам навигации страницы.")
+    @Description("Проверка перехода по кнопке 'Узнать больше' первого раздела.")
     @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMoreAboutFirstSection() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMoreAboutFirstSection'.");
@@ -148,7 +148,7 @@ public class CheckNavigationMainTests extends BaseTest {
     }
 
     @Test
-    @Description("Проверка переходов по элементам навигации страницы.")
+    @Description("Проверка перехода по кнопке 'Узнать больше' раздела 'Психологическое консультирование'.")
     @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMorePC() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMorePC'.");
@@ -167,7 +167,7 @@ public class CheckNavigationMainTests extends BaseTest {
     }
 
     @Test
-    @Description("Проверка переходов по элементам навигации страницы.")
+    @Description("Проверка перехода по кнопке 'Узнать больше' раздела 'Карьерное консультирование и профориентация'.")
     @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMoreCCG() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMoreCCG()'.");
@@ -186,7 +186,7 @@ public class CheckNavigationMainTests extends BaseTest {
     }
 
     @Test
-    @Description("Проверка переходов по элементам навигации страницы.")
+    @Description("Проверка перехода по кнопке 'Узнать больше' раздела 'Коучинг'.")
     @Severity(SeverityLevel.NORMAL)
     public void chekButtonLearnMoreCoaching() throws InterruptedException {
         logger.info("Starting test 'chekButtonLearnMoreCoaching'.");
@@ -205,7 +205,7 @@ public class CheckNavigationMainTests extends BaseTest {
     }
 
     @Test
-    @Description("Проверка переходов по элементам навигации страницы.")
+    @Description("Проверка перехода по кнопке 'Вверх' в нижней части страницы 'psycholog-vam.ru'.")
     @Severity(SeverityLevel.NORMAL)
     public void checkButtonUp() throws InterruptedException {
         logger.info("Starting test 'checkButtonUp'.");
